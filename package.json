@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build:android": "npx eas build -p android --profile production",
+    "submit:android": "npx eas submit -p android --profile production"
   },
   "dependencies": {
     "expo": "~54.0.33",
