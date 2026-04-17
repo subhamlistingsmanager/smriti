@@ -48,6 +48,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Initialize EAS project
+        run: eas project:init --non-interactive --force
+
       - name: Build APK and capture links
         id: build_apk
         run: |
