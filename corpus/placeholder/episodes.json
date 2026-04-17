@@ -1,62 +1,458 @@
 [
   {
-    "episode_id": "mbh.sabha.draupadi_vastraharan",
-    "source_text": "mahabharat",
-    "kanda_parva": "Sabha Parva",
-    "characters": ["Draupadi", "Dushasana", "Duryodhana", "Yudhishthira", "Bhishma", "Drona", "Vidura", "Karna", "Krishna"],
-    "location": "Hastinapura, the great assembly hall",
-    "summary_en": "After Yudhishthira loses everything in the dice game — his kingdom, his brothers, himself, and finally Draupadi — Duryodhana orders her dragged into the assembly. Draupadi, in the midst of her monthly seclusion, is pulled by her hair into the court by Dushasana. She asks the assembled elders one searing question: 'Did my husband, who had already lost himself, have the right to stake me?' No one answers. Bhishma, Drona, Vidura — all sit in silence, bound by their own interpretations of dharma, protocol, and loyalty. Duryodhana bares his thigh to mock her; Dushasana begins to disrobe her. In her extremity, Draupadi releases her grip on her own garment and calls out to Krishna, surrendering completely. The cloth becomes endless. The humiliation fails. But the silence of the elders — the people who should have spoken — is the wound that never heals. It is this silence that makes the war inevitable, thirteen years later.",
-    "themes": ["injustice in plain sight", "silence of those who should speak", "surrender in extremity", "humiliation", "the cost of not acting", "dharma vs protocol"],
-    "emotional_situations": ["being publicly humiliated and no one intervening", "watching injustice happen and feeling unable to speak", "losing dignity in front of people who should protect you", "being betrayed by silence", "calling out for help when all seems lost", "a system failing the person it should protect"],
-    "source_excerpt": "Then Dushasana, O king, forcibly seizing Draupadi's attire before the eyes of all, began to drag it off her person. But, O king, as fast as Draupadi's attire was being dragged, other attire of the same kind appeared to cover her. And, O exalted one, owing to the protection of dharma, hundreds upon hundreds of robes of many hues appeared. And at that wonderful sight, all the monarchs that were there were struck with amazement. And among the spectators, Vidura and Drona and Kripa and Bhishma were all bathed in tears. And the whole assembly began to applaud Draupadi and censure the son of Dhritarashtra. And Bhima then, squeezing hand in hand, said in a voice of deep thunder, 'Hear these words of mine, ye Kshatriyas of the world. Words such as these have never before been uttered by other men, nor will any one speak them hereafter. If having spoken these words I do not accomplish them, let me not obtain the regions of my deceased ancestors. Tearing open in battle the breast of this wretch, this wicked-minded scoundrel of the Bharata race, if I do not drink his blood, let me not obtain the regions of my ancestors.'",
-    "linked_verses": []
+    "episode_id": "hv.vishnu.chanura_mushtika_battle",
+    "source_text": "harivamsha",
+    "kanda_parva": "LXXXIV-LXXXV. Arena and wrestling",
+    "characters": [
+      "Krishna",
+      "Balarama",
+      "Chanura",
+      "Mushtika",
+      "Kansa",
+      "Devaki",
+      "Vasudeva"
+    ],
+    "location": "Mathura wrestling arena",
+    "summary_en": "In Kansa's arena, Krishna and Balarama face champion wrestlers Chanura and Mushtika. The contest is framed as sport but charged as execution. Krishna and Balarama win decisively, and the fear structure around Kansa begins to collapse in public view.",
+    "source_excerpt": "Wrestling with Chanura... Krishna pressed his breast... Chanura... lay in the arena... Baladeva struck Mushtika... the arena grew void of wrestlers.",
+    "themes": [
+      "courage under spectacle",
+      "truth versus staged power",
+      "public turning point"
+    ],
+    "emotional_situations": [
+      "facing intimidation in front of a crowd",
+      "breaking fear through action"
+    ],
+    "linked_verses": [
+      "gita.2.3"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "LXXXIV-LXXXV"
+    }
+  },
+  {
+    "episode_id": "hv.vishnu.krishna_birth_devaki",
+    "source_text": "harivamsha",
+    "kanda_parva": "LIX. Birth of Krishna and Baladeva",
+    "characters": [
+      "Krishna",
+      "Devaki",
+      "Vasudeva",
+      "Rohini",
+      "Yashoda",
+      "Kansa"
+    ],
+    "location": "Mathura prison and Gokula",
+    "summary_en": "After Devaki's earlier children are killed, the eighth birth occurs at midnight. Krishna is born, Vasudeva carries him to Yashoda, and the children are exchanged to protect him from Kansa. The episode holds both cosmic wonder and parental terror.",
+    "source_excerpt": "In the auspicious midnight... Devaki gave birth... Vasudeva... repaired to the house of Yashoda... brought her daughter and placed her on Devaki's bed.",
+    "themes": [
+      "birth under threat",
+      "parental courage",
+      "destiny and protection",
+      "sacrifice"
+    ],
+    "emotional_situations": [
+      "protecting a child under danger",
+      "acting calmly in fear",
+      "hope in a dark night"
+    ],
+    "linked_verses": [
+      "gita.4.8"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "LIX"
+    }
+  },
+  {
+    "episode_id": "hv.vishnu.krishna_enters_mathura",
+    "source_text": "harivamsha",
+    "kanda_parva": "CI. Krishna's Arrival at Mathura",
+    "characters": [
+      "Krishna",
+      "Balarama",
+      "Akrura",
+      "Kansa",
+      "Vasudeva",
+      "Devaki"
+    ],
+    "location": "Mathura city",
+    "summary_en": "Krishna and Balarama leave Vraja and enter Mathura, where anticipation and fear converge. Kansa prepares public spectacle and covert violence. The city becomes the stage where a private prophecy turns into political reckoning.",
+    "source_excerpt": "Many... set out for Mathura... the two sons of Vasudeva entered the city while Kansa prepared the arena and his plan.",
+    "themes": [
+      "arrival before reckoning",
+      "public theatre of power",
+      "destiny meeting politics"
+    ],
+    "emotional_situations": [
+      "walking into a trap knowingly",
+      "calm before confrontation"
+    ],
+    "linked_verses": [
+      "gita.11.33"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "CI"
+    }
+  },
+  {
+    "episode_id": "hv.vishnu.krishna_slays_kansa_bows_parents",
+    "source_text": "harivamsha",
+    "kanda_parva": "LXXXV. Kansa slain",
+    "characters": [
+      "Krishna",
+      "Kansa",
+      "Balarama",
+      "Vasudeva",
+      "Devaki",
+      "Ugrasena"
+    ],
+    "location": "Mathura arena and royal quarters",
+    "summary_en": "After Kansa insults Vasudeva and orders repression, Krishna leaps up, drags Kansa down, and kills him. The victory scene pivots immediately to tenderness: Krishna first bows at Vasudeva's and Devaki's feet. Justice is completed by restoration, not celebration alone.",
+    "source_excerpt": "Krishna drew Kansa by the hair... dragged him in the arena... when Kansa breathed his last... Krishna first touched Vasudeva's feet and afterwards bowed at the feet of his mother.",
+    "themes": [
+      "tyrant's fall",
+      "justice with restraint",
+      "return to parents",
+      "restoration after violence"
+    ],
+    "emotional_situations": [
+      "confronting long-feared authority",
+      "coming home after conflict",
+      "softness after intensity"
+    ],
+    "linked_verses": [
+      "gita.4.8",
+      "gita.18.66"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "LXXXV"
+    }
   },
   {
     "episode_id": "mbh.bhishma.arjuna_vishada",
     "source_text": "mahabharat",
-    "kanda_parva": "Bhishma Parva",
-    "characters": ["Arjuna", "Krishna", "Bhishma", "Drona", "Karna", "Duryodhana"],
-    "location": "Kurukshetra, between the two armies",
-    "summary_en": "The war is about to begin. Arjuna asks Krishna to drive the chariot between the two armies so he can see who he must fight. When he looks, he sees on both sides — his grandfather Bhishma, his teacher Drona, his cousins, his friends. These are the people who raised him, taught him, loved him. And he must kill them. His body begins to tremble. His bow, the Gandiva, slips from his hands. He tells Krishna he cannot fight. 'I do not see any good in killing my own kinsmen. What use is kingdom, pleasure, or even life itself?' This is not cowardice — Arjuna is the greatest warrior alive. This is the despair of a man who sees that every path leads to destruction. He would rather die unarmed than carry the weight of this violence. Krishna does not dismiss his anguish. He does not say 'be brave.' He sits with Arjuna in that despair, and then, slowly, over eighteen chapters, he unfolds the Bhagavad Gita — not as a lecture, but as a conversation between a man in crisis and the friend who will not let him look away from what he must face.",
-    "themes": ["paralysis before a hard decision", "duty vs love", "the cost of doing what is right", "despair that is not weakness", "needing someone to sit with you in the dark before you can act"],
-    "emotional_situations": ["being paralyzed before a decision where every option causes harm", "knowing what you must do but being unable to start", "feeling that acting will destroy something you love", "wanting someone to just sit with you, not fix it", "doubting whether any outcome is worth the cost"],
-    "source_excerpt": "Arjuna said: 'Seeing these kinsmen, O Krishna, arrayed and desirous of battle, my limbs give way, my mouth becomes dry, my body trembles, and my hair stands on end. The bow Gandiva slips from my hand, and my skin burns all over. I am unable to stand, and my mind seems to whirl. I see adverse omens, O Kesava. I do not see any good in killing my own kinsmen in battle. I do not desire victory, O Krishna, nor kingdom, nor pleasures. Of what use is kingdom to us, O Govinda? Of what use are enjoyments, or even life itself? Those for whose sake we desire kingdom, enjoyments and pleasures — they stand here in battle, abandoning life and riches. Teachers, fathers, sons, and also grandfathers; maternal uncles, fathers-in-law, grandsons, brothers-in-law, and other kinsmen. These I would not kill, O slayer of Madhu, even though they may kill me, not even for the sovereignty of the three worlds — how then for the sake of the earth?'",
-    "linked_verses": ["gita.2.47"]
+    "kanda_parva": "Bhishma Parva, Section XXV",
+    "characters": [
+      "Arjuna",
+      "Krishna",
+      "Bhishma",
+      "Drona",
+      "Duryodhana"
+    ],
+    "location": "Kurukshetra battlefield between armies",
+    "summary_en": "As war begins, Arjuna asks Krishna to place the chariot between armies. Seeing teachers, grandsires, cousins, and friends on both sides, he collapses internally. His bow slips, his body trembles, and he says he does not want victory at the cost of his kin. This breakdown becomes the opening for the Bhagavad Gita.",
+    "source_excerpt": "My limbs become languid... Gandiva slips from my hand... I do not desire victory... Of what use would sovereignty be to us... Better would it be for me if... they should slay me unarmed.",
+    "themes": [
+      "moral paralysis",
+      "duty versus attachment",
+      "crisis before action",
+      "grief before responsibility"
+    ],
+    "emotional_situations": [
+      "freezing before a painful decision",
+      "seeing every option as loss",
+      "needing guidance without judgment"
+    ],
+    "linked_verses": [
+      "gita.2.3",
+      "gita.2.47",
+      "gita.11.33"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m06/m06025.htm",
+      "locator": "Book 6, Section XXV"
+    }
+  },
+  {
+    "episode_id": "mbh.sabha.draupadi_vastraharan",
+    "source_text": "mahabharat",
+    "kanda_parva": "Sabha Parva, Section LXVII",
+    "characters": [
+      "Draupadi",
+      "Dushasana",
+      "Duryodhana",
+      "Yudhishthira",
+      "Bhima",
+      "Vidura",
+      "Vikarna",
+      "Karna"
+    ],
+    "location": "Hastinapura royal assembly",
+    "summary_en": "In the dice hall, Draupadi is dragged into court after Yudhishthira loses everything. She asks whether a man who has already lost himself can stake his wife. Elders stay silent while Vikarna protests and Karna pushes humiliation further. As Dushasana tries to disrobe her, endless garments appear and her dignity is protected. The deepest wound is not only the assault, but the public silence of those who knew better.",
+    "source_excerpt": "Dussasana... began to drag it off her person... after one was taken off, another of the same kind appeared covering her... hundreds upon hundreds of robes of many hues came off Draupadi's person... and the kings... began to applaud Draupadi and censure the son of Dhritarashtra.",
+    "themes": [
+      "injustice in public",
+      "silence of elders",
+      "dharma vs technicality",
+      "moral courage",
+      "humiliation and dignity"
+    ],
+    "emotional_situations": [
+      "being wronged in front of everyone",
+      "asking for fairness and getting silence",
+      "feeling abandoned by institutions",
+      "holding dignity under attack"
+    ],
+    "linked_verses": [
+      "mbh.key.yato_dharmas_tato_jayah"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m02/m02067.htm",
+      "locator": "Book 2, Section LXVII"
+    }
+  },
+  {
+    "episode_id": "mbh.vana.draupadi_satyabhama",
+    "source_text": "mahabharat",
+    "kanda_parva": "Vana Parva, Section CCXXXI",
+    "characters": [
+      "Draupadi",
+      "Satyabhama"
+    ],
+    "location": "Pandava forest hermitage",
+    "summary_en": "Satyabhama asks Draupadi how she keeps the Pandavas devoted and whether she uses charms. Draupadi rejects manipulation and describes disciplined service, accountability, emotional restraint, and responsibility for household and treasury. The exchange presents relationship strength as daily conduct, not control tactics.",
+    "source_excerpt": "How can I answer thee... about the practices of women that are wicked?... Keeping aside vanity... I always serve... Personally do I wait every day... This hath ever been my charm.",
+    "themes": [
+      "relationship ethics",
+      "discipline over manipulation",
+      "service and responsibility",
+      "domestic leadership"
+    ],
+    "emotional_situations": [
+      "wanting trust without control",
+      "learning partnership through action",
+      "balancing dignity and duty"
+    ],
+    "linked_verses": [
+      "gita.2.47"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m03/m03231.htm",
+      "locator": "Book 3, Section CCXXXI"
+    }
+  },
+  {
+    "episode_id": "mbh.vana.nalopakhyana_opening",
+    "source_text": "mahabharat",
+    "kanda_parva": "Vana Parva, Section LII",
+    "characters": [
+      "Yudhishthira",
+      "Bhima",
+      "Rishi Brihadashwa"
+    ],
+    "location": "Kamyaka forest",
+    "summary_en": "In exile, grief and frustration peak among the Pandavas. Bhima urges immediate retaliation, while Yudhishthira refuses to break his word. Seeing him crushed by shame and helplessness, Rishi Brihadashwa narrates Nala's story to show that ruin can be survived with patience, skill, and recovery.",
+    "source_excerpt": "O holy one... deprived of wealth and kingdom through gambling... Is there a king more unfortunate than myself?... I will narrate the history of a prince more miserable than thyself.",
+    "themes": [
+      "after a major mistake",
+      "shame and recovery",
+      "holding vows under pressure",
+      "learning through story"
+    ],
+    "emotional_situations": [
+      "living with consequences of one decision",
+      "being urged to act rashly",
+      "looking for hope after public failure"
+    ],
+    "linked_verses": [
+      "gita.6.5"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m03/m03052.htm",
+      "locator": "Book 3, Section LII"
+    }
+  },
+  {
+    "episode_id": "mbh.vana.pandava_agyatavasa_transition",
+    "source_text": "mahabharat",
+    "kanda_parva": "Vana Parva, Section CCCXIII",
+    "characters": [
+      "Yudhishthira",
+      "Bhima",
+      "Arjuna",
+      "Nakula",
+      "Sahadeva",
+      "Draupadi",
+      "Dhaumya"
+    ],
+    "location": "Forest before incognito year",
+    "summary_en": "At the end of exile, the Pandavas prepare for the final year of anonymity. Yudhishthira fears failure and renewed injustice, but Dhaumya reminds him that even gods have used concealment strategically. The brothers choose discipline over ego and step into uncertainty with a shared plan.",
+    "source_excerpt": "It behoveth you to permit us now to spend this year in concealment... Men of such stamp are not overwhelmed... high-souled persons have before this conquered their enemies in battle.",
+    "themes": [
+      "strategic patience",
+      "humility before comeback",
+      "team alignment",
+      "discipline under risk"
+    ],
+    "emotional_situations": [
+      "preparing quietly before a critical move",
+      "fear of being discovered",
+      "choosing planning over impulse"
+    ],
+    "linked_verses": [
+      "gita.2.50"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m03/m03313.htm",
+      "locator": "Book 3, Section CCCXIII"
+    }
   },
   {
     "episode_id": "ram.ayodhya.bharata_refuses_throne",
     "source_text": "ramayan",
-    "kanda_parva": "Ayodhya Kanda",
-    "characters": ["Bharata", "Kaikeyi", "Rama", "Sita", "Lakshmana", "Vasishtha", "Kausalya"],
-    "location": "Ayodhya, then the forest at Chitrakoot",
-    "summary_en": "Bharata returns to Ayodhya to find his world shattered. His father Dasharatha is dead. His brother Rama is in exile. And the cause of it all is his own mother, Kaikeyi, who demanded the throne for Bharata and banishment for Rama. Bharata is devastated. He did not ask for this. He did not want this. The kingdom that has fallen into his hands is poisoned by how it was obtained. He publicly renounces his mother's act, refuses the throne, and marches to the forest with the entire court to beg Rama to return. When Rama gently refuses — bound by his word to their father — Bharata asks for Rama's sandals. He places them on the throne and governs Ayodhya for fourteen years as a caretaker, living outside the city in a hermitage, wearing bark cloth, waiting. He never sits on the throne. He rules in Rama's name, placing every decision before the sandals. This is not martyrdom or performance — it is a man refusing to benefit from an injustice done in his name, even when everyone around him says he has every right to rule.",
-    "themes": ["refusing to benefit from injustice", "cleaning up a parent's mistake", "loyalty that asks nothing in return", "integrity over convenience", "waiting with patience and faith"],
-    "emotional_situations": ["being given something you did not earn and cannot accept", "guilt for something a family member did in your name", "choosing the harder path because the easier one was built on someone else's pain", "waiting for something with no guarantee it will come", "loving someone enough to hold their place without recognition"],
-    "source_excerpt": "Then Bharata, the son of Kaikeyi, deeply distressed, addressed his mother in the midst of the assembly: 'O cruel woman, destroyer of this royal house, thou art not my mother. Thou hast widowed thyself by thy own act. My noble father hath gone to heaven, and the righteous Rama is in exile. This kingdom, O wicked woman, I shall not accept, even as a pious man would not accept food that is polluted.' Having thus spoken to his mother, Bharata, afflicted with grief, fell senseless on the ground. And all the people, seeing the noble Bharata overwhelmed with sorrow, raised a great cry of lamentation. Then Bharata, having recovered his senses, said unto the assembled ministers and people: 'I shall go to the forest and bring back Rama, the rightful king. I shall fall at his feet and entreat him to return. And if Rama will not return, then shall I remain in the forest and Rama shall reign.' And all the people approved of the words of Bharata and made ready to march to the forest of Chitrakoot.",
-    "linked_verses": []
+    "kanda_parva": "Ayodhya Kanda (Griffith), Cantos LXX-LCXXIX",
+    "characters": [
+      "Bharata",
+      "Kaikeyi",
+      "Rama",
+      "Sita",
+      "Lakshmana",
+      "Vasistha"
+    ],
+    "location": "Ayodhya and Chitrakut",
+    "summary_en": "Bharata returns to find Dasharatha dead and Rama exiled through Kaikeyi's demand. He rejects kingship gained by injustice, travels to Rama in the forest, and asks him to return. When Rama refuses due to dharma, Bharata places Rama's sandals on the throne and governs as trustee, not king.",
+    "source_excerpt": "Bharat, his son, refused to reign... Then Bharat, finding prayer was vain... with Rama's shoes upon his head, returned to rule in Rama's name.",
+    "themes": [
+      "refusing unjust gain",
+      "moral trusteeship",
+      "brotherly loyalty",
+      "integrity over power"
+    ],
+    "emotional_situations": [
+      "inheriting benefit from someone else's suffering",
+      "choosing legitimacy over convenience",
+      "holding space for another person"
+    ],
+    "linked_verses": [
+      "ram.key.ramo_vigrahavan_dharmah"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/ebooks/24869",
+      "locator": "Ayodhya Kanda"
+    }
   },
   {
-    "episode_id": "ram.sundara.sita_ashoka_vatika",
+    "episode_id": "ram.sundara.sita_hanuman_first_meeting",
     "source_text": "ramayan",
-    "kanda_parva": "Sundara Kanda",
-    "characters": ["Sita", "Ravana", "Hanuman", "Trijata"],
-    "location": "Lanka, the Ashoka Vatika grove",
-    "summary_en": "Sita has been held captive in Lanka for months. Ravana visits her daily, alternating between threats and temptation — he offers her queenship, power, luxury. She refuses every time. The rakshasis who guard her torment her. She sleeps on the ground under a tree. She does not know if Rama is alive, if he is searching, if rescue will ever come. She considers ending her own life. What holds her is not certainty but something quieter — a faith in Rama's character that does not need proof. When Hanuman finally arrives, hidden in the branches of the shimshapa tree, and whispers Rama's name, Sita does not immediately believe him. She has been deceived before — Ravana once created an illusion of Rama's severed head to break her. She questions Hanuman carefully, asking him to describe Rama in detail, testing whether this messenger is real. Only when Hanuman produces Rama's signet ring does she allow herself to hope. Even then, she does not ask to be carried away. She tells Hanuman: 'Let Rama come himself. Let him earn this victory.' Her dignity, even in captivity, is absolute.",
-    "themes": ["enduring when you do not know if relief will come", "faith without proof", "dignity in captivity", "resisting temptation and threats", "the quiet strength of refusal"],
-    "emotional_situations": ["waiting for help with no certainty it is coming", "being pressured to give up and accept something wrong", "holding on to your identity when everything around you tries to erase it", "the moment when hope arrives but you are afraid to trust it", "choosing dignity over escape"],
-    "source_excerpt": "Then Sita, afflicted with grief and emaciated through fasting, beheld Hanuman sitting on the branches of the shimshapa tree. And seeing that chief of monkeys, Sita was filled with amazement and doubt, thinking, 'Is this a dream, or is this waking reality? Let it not be that Ravana has again practised deception upon me.' And she reflected, 'But sleep does not come to me, for grief has driven it far away. And my mind is ever fixed on Rama alone. Perhaps, through constantly thinking of Rama, I see his messenger before me. Yet this form appears real and not a phantom. May it be auspicious! Let me hear him speak.' Then Hanuman, descending from the tree, approached Vaidehi with joined palms, and standing at a distance, said in sweet and gentle words: 'O blessed lady, who art thou that standest clinging to the branch of this tree? Who art thou whose lotus-like eyes overflow with tears? I am a messenger of Rama, O noble lady. Rama is well, and he sends tidings to thee through me.'",
-    "linked_verses": []
+    "kanda_parva": "Sundara Kanda, Cantos XXXII-XXXIV",
+    "characters": [
+      "Sita",
+      "Hanuman",
+      "Ravana"
+    ],
+    "location": "Lanka, Ashoka grove",
+    "summary_en": "Hanuman finally reaches Sita in Ashoka grove. Starved by grief and surrounded by danger, she first doubts him, suspecting Ravana's trick. Hanuman speaks gently, names Rama and Lakshmana, and wins trust through truth rather than force. Hope returns slowly, not instantly.",
+    "source_excerpt": "Canto XXXII. Sita's Doubt... 'Tis Ravan... who tries to mock me with a new disguise... If thou art Rama's messenger, the glories of my lord repeat.",
+    "themes": [
+      "trust after trauma",
+      "hope under captivity",
+      "discernment",
+      "gentle reassurance"
+    ],
+    "emotional_situations": [
+      "wanting to believe good news but being afraid",
+      "testing trust carefully",
+      "holding identity under pressure"
+    ],
+    "linked_verses": [
+      "hanuman_chalisa.chaupai_17"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/ebooks/24869",
+      "locator": "Sundara Kanda, Cantos XXXII-XXXIV"
+    }
   },
   {
-    "episode_id": "hv.vishnu.krishna_kamsa",
-    "source_text": "harivamsha",
-    "kanda_parva": "Vishnu Parva",
-    "characters": ["Krishna", "Kamsa", "Balarama", "Vasudeva", "Devaki", "Nanda", "Yashoda"],
-    "location": "Mathura, Kamsa's wrestling arena",
-    "summary_en": "Krishna and Balarama arrive in Mathura as young cowherd boys, summoned by Kamsa to a wrestling tournament that is really a trap. Kamsa has sent his finest wrestlers — Chanura and Mushtika — to kill them. The people of Mathura line the streets, seeing Krishna for the first time since the night Vasudeva carried him across the Yamuna as a newborn. They whisper: 'This is the child of Devaki. This is the one Kamsa has been trying to kill for sixteen years.' When Krishna enters the arena, he appears differently to everyone who looks at him — the wrestlers see a thunderbolt, the women see the most beautiful youth, the common people see a kinsman, and Kamsa sees death itself. Krishna kills the wrestlers, then approaches Kamsa on his throne. Kamsa draws his sword but Krishna seizes him by the hair, drags him from the throne, and kills him. Then — and this is the moment — Krishna goes to the prison where Vasudeva and Devaki have been chained for sixteen years and touches their feet. The boy who just killed a tyrant kneels before his parents as a son. He frees them. They weep. The first thing Krishna does after the killing is not celebrate — it is to restore what was broken. He goes home.",
-    "themes": ["confronting what you were born to face", "returning home", "justice after long patience", "the moment of reckoning", "tenderness after violence"],
-    "emotional_situations": ["facing a confrontation you have been avoiding or preparing for your whole life", "returning to a place or people after a long separation", "doing something terrifying because it is what you were meant to do", "the quiet after a storm — tenderness after intensity", "freeing someone who has waited a long time for you"],
-    "source_excerpt": "Then Krishna, that slayer of foes, of mighty arms, beholding the wicked Kamsa seated on his throne with sword in hand, rushed towards him with the speed of a hawk. And seizing the king of the Bhojas by the hair of his head, Krishna, that foremost of all mighty persons, threw him down from his high seat upon the ground. And mounting upon the breast of that fallen king, Krishna of irresistible prowess slew him in the sight of all. Then, having slain Kamsa, Krishna of lotus eyes went unto the prison where Vasudeva and Devaki were held in bondage. And touching their feet with reverence, that illustrious one freed them from their chains. And Vasudeva and Devaki, beholding their son Krishna after so many years, shed tears of joy and embraced him with great affection, saying, 'O son, O mighty-armed one, we have been saved by thee from this long night of sorrow. Thou art our deliverer, O Krishna, and the deliverer of all the world.' And Krishna, with joined palms, said unto his parents, 'Forgive me, that I could not come sooner. What was ordained had to be fulfilled in its own time.'",
-    "linked_verses": []
+    "episode_id": "ram.yuddha.bharata_rama_reunion",
+    "source_text": "ramayan",
+    "kanda_parva": "Yuddha Kanda, Canto CXXIX",
+    "characters": [
+      "Rama",
+      "Bharata",
+      "Sita",
+      "Lakshmana",
+      "Hanuman",
+      "Shatrughna"
+    ],
+    "location": "Near Nandigrama, return to Ayodhya",
+    "summary_en": "When Rama returns after exile, Bharata greets him with reverence and relief, still carrying Rama's sandals. The reunion resolves a long moral tension: rule returns to rightful hands, and Bharata's trusteeship is completed without bitterness.",
+    "source_excerpt": "Still on his head... Rama's shoes he bore... Then Bharat clomb the car to greet his king and bowed him at his feet.",
+    "themes": [
+      "fulfilled waiting",
+      "duty completed",
+      "reunion after vow",
+      "legitimate return"
+    ],
+    "emotional_situations": [
+      "keeping a promise for years",
+      "returning responsibility with joy"
+    ],
+    "linked_verses": [
+      "ram.key.ramo_vigrahavan_dharmah"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/files/24869/24869-0.txt",
+      "locator": "Canto CXXIX"
+    }
+  },
+  {
+    "episode_id": "ram.yuddha.hanuman_sita_gem_token",
+    "source_text": "ramayan",
+    "kanda_parva": "Sundara Kanda, Canto XXXVIII",
+    "characters": [
+      "Sita",
+      "Hanuman",
+      "Rama"
+    ],
+    "location": "Lanka, Ashoka grove",
+    "summary_en": "When trust is established, Sita gives Hanuman a personal token for Rama. The token is not just proof of contact, but emotional continuity: memory, fidelity, and urgency carried across war. Hanuman becomes a bridge between despair and action.",
+    "source_excerpt": "How Sita gave a gem o'erjoyed... and Hanuman bore the sign to Rama.",
+    "themes": [
+      "token of trust",
+      "message across distance",
+      "love under separation"
+    ],
+    "emotional_situations": [
+      "needing tangible proof for loved ones",
+      "sending hope through a messenger"
+    ],
+    "linked_verses": [
+      "hanuman_chalisa.doha_1"
+    ],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/ebooks/24869",
+      "locator": "Sundara Kanda, Canto XXXVIII"
+    }
   }
 ]

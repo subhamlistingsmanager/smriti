@@ -1,0 +1,92 @@
+[
+  {
+    "episode_id": "mbh.sabha.draupadi_vastraharan",
+    "source_text": "mahabharat",
+    "kanda_parva": "Sabha Parva, Section LXVII",
+    "characters": ["Draupadi", "Dushasana", "Duryodhana", "Yudhishthira", "Bhima", "Vidura", "Vikarna", "Karna"],
+    "location": "Hastinapura royal assembly",
+    "summary_en": "In the dice hall, Draupadi is dragged into court after Yudhishthira loses everything. She asks whether a man who has already lost himself can stake his wife. Elders stay silent while Vikarna protests and Karna pushes humiliation further. As Dushasana tries to disrobe her, endless garments appear and her dignity is protected. The deepest wound is not only the assault, but the public silence of those who knew better.",
+    "source_excerpt": "Dussasana... began to drag it off her person... after one was taken off, another of the same kind appeared covering her... hundreds upon hundreds of robes of many hues came off Draupadi's person... and the kings... began to applaud Draupadi and censure the son of Dhritarashtra.",
+    "themes": ["injustice in public", "silence of elders", "dharma vs technicality", "moral courage", "humiliation and dignity"],
+    "emotional_situations": ["being wronged in front of everyone", "asking for fairness and getting silence", "feeling abandoned by institutions", "holding dignity under attack"],
+    "linked_verses": ["mbh.key.yato_dharmas_tato_jayah"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m02/m02067.htm",
+      "locator": "Book 2, Section LXVII"
+    }
+  },
+  {
+    "episode_id": "mbh.bhishma.arjuna_vishada",
+    "source_text": "mahabharat",
+    "kanda_parva": "Bhishma Parva, Section XXV",
+    "characters": ["Arjuna", "Krishna", "Bhishma", "Drona", "Duryodhana"],
+    "location": "Kurukshetra battlefield between armies",
+    "summary_en": "As war begins, Arjuna asks Krishna to place the chariot between armies. Seeing teachers, grandsires, cousins, and friends on both sides, he collapses internally. His bow slips, his body trembles, and he says he does not want victory at the cost of his kin. This breakdown becomes the opening for the Bhagavad Gita.",
+    "source_excerpt": "My limbs become languid... Gandiva slips from my hand... I do not desire victory... Of what use would sovereignty be to us... Better would it be for me if... they should slay me unarmed.",
+    "themes": ["moral paralysis", "duty versus attachment", "crisis before action", "grief before responsibility"],
+    "emotional_situations": ["freezing before a painful decision", "seeing every option as loss", "needing guidance without judgment"],
+    "linked_verses": ["gita.2.3", "gita.2.47", "gita.11.33"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m06/m06025.htm",
+      "locator": "Book 6, Section XXV"
+    }
+  },
+  {
+    "episode_id": "mbh.vana.nalopakhyana_opening",
+    "source_text": "mahabharat",
+    "kanda_parva": "Vana Parva, Section LII",
+    "characters": ["Yudhishthira", "Bhima", "Rishi Brihadashwa"],
+    "location": "Kamyaka forest",
+    "summary_en": "In exile, grief and frustration peak among the Pandavas. Bhima urges immediate retaliation, while Yudhishthira refuses to break his word. Seeing him crushed by shame and helplessness, Rishi Brihadashwa narrates Nala's story to show that ruin can be survived with patience, skill, and recovery.",
+    "source_excerpt": "O holy one... deprived of wealth and kingdom through gambling... Is there a king more unfortunate than myself?... I will narrate the history of a prince more miserable than thyself.",
+    "themes": ["after a major mistake", "shame and recovery", "holding vows under pressure", "learning through story"],
+    "emotional_situations": ["living with consequences of one decision", "being urged to act rashly", "looking for hope after public failure"],
+    "linked_verses": ["gita.6.5"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m03/m03052.htm",
+      "locator": "Book 3, Section LII"
+    }
+  },
+  {
+    "episode_id": "mbh.vana.draupadi_satyabhama",
+    "source_text": "mahabharat",
+    "kanda_parva": "Vana Parva, Section CCXXXI",
+    "characters": ["Draupadi", "Satyabhama"],
+    "location": "Pandava forest hermitage",
+    "summary_en": "Satyabhama asks Draupadi how she keeps the Pandavas devoted and whether she uses charms. Draupadi rejects manipulation and describes disciplined service, accountability, emotional restraint, and responsibility for household and treasury. The exchange presents relationship strength as daily conduct, not control tactics.",
+    "source_excerpt": "How can I answer thee... about the practices of women that are wicked?... Keeping aside vanity... I always serve... Personally do I wait every day... This hath ever been my charm.",
+    "themes": ["relationship ethics", "discipline over manipulation", "service and responsibility", "domestic leadership"],
+    "emotional_situations": ["wanting trust without control", "learning partnership through action", "balancing dignity and duty"],
+    "linked_verses": ["gita.2.47"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m03/m03231.htm",
+      "locator": "Book 3, Section CCXXXI"
+    }
+  },
+  {
+    "episode_id": "mbh.vana.pandava_agyatavasa_transition",
+    "source_text": "mahabharat",
+    "kanda_parva": "Vana Parva, Section CCCXIII",
+    "characters": ["Yudhishthira", "Bhima", "Arjuna", "Nakula", "Sahadeva", "Draupadi", "Dhaumya"],
+    "location": "Forest before incognito year",
+    "summary_en": "At the end of exile, the Pandavas prepare for the final year of anonymity. Yudhishthira fears failure and renewed injustice, but Dhaumya reminds him that even gods have used concealment strategically. The brothers choose discipline over ego and step into uncertainty with a shared plan.",
+    "source_excerpt": "It behoveth you to permit us now to spend this year in concealment... Men of such stamp are not overwhelmed... high-souled persons have before this conquered their enemies in battle.",
+    "themes": ["strategic patience", "humility before comeback", "team alignment", "discipline under risk"],
+    "emotional_situations": ["preparing quietly before a critical move", "fear of being discovered", "choosing planning over impulse"],
+    "linked_verses": ["gita.2.50"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "Mahabharata, Kisari Mohan Ganguli",
+      "url": "https://www.sacred-texts.com/hin/m03/m03313.htm",
+      "locator": "Book 3, Section CCCXIII"
+    }
+  }
+]

@@ -1,0 +1,75 @@
+name: android-apk-on-demand
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "EAS build profile (must produce APK)"
+        required: true
+        default: "preview"
+        type: choice
+        options:
+          - preview
+          - development
+
+jobs:
+  build-apk:
+    name: Build Android APK (on demand)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+    steps:
+      - name: Check Expo token
+        run: |
+          if [ -z "$EXPO_TOKEN" ]; then
+            echo "Missing EXPO_TOKEN secret. Add it in repo settings before running this workflow."
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup EAS CLI
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build APK and capture links
+        id: build_apk
+        run: |
+          BUILD_JSON=$(npx eas build --platform android --profile "${{ inputs.profile }}" --non-interactive --wait --json)
+          echo "$BUILD_JSON" > build-result.json
+
+          DETAILS_URL=$(node -e "const fs=require('fs'); const d=JSON.parse(fs.readFileSync('build-result.json','utf8')); const b=Array.isArray(d)?d[0]:d; console.log(b.buildDetailsPageUrl || '');")
+          ARTIFACT_URL=$(node -e "const fs=require('fs'); const d=JSON.parse(fs.readFileSync('build-result.json','utf8')); const b=Array.isArray(d)?d[0]:d; console.log((b.artifacts && b.artifacts.buildUrl) ? b.artifacts.buildUrl : '');")
+
+          echo "details_url=$DETAILS_URL" >> "$GITHUB_OUTPUT"
+          echo "artifact_url=$ARTIFACT_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Publish download links in Action summary
+        run: |
+          {
+            echo "## Android APK build complete"
+            echo ""
+            echo "- Profile: \`${{ inputs.profile }}\`"
+            echo "- EAS build page: ${{ steps.build_apk.outputs.details_url }}"
+            if [ -n "${{ steps.build_apk.outputs.artifact_url }}" ]; then
+              echo "- APK download: ${{ steps.build_apk.outputs.artifact_url }}"
+            else
+              echo "- APK download: not directly available yet. Open the EAS build page and download the artifact there."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

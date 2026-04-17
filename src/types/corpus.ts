@@ -13,6 +13,14 @@ export interface Episode {
   themes: string[];
   emotional_situations: string[];
   linked_verses: string[];
+  /** Curated high-impact retrieval exemplar */
+  is_anchor_episode?: boolean;
+  /** Optional citation for provenance and offline curation */
+  source_ref?: {
+    title: string;
+    url: string;
+    locator?: string;
+  };
 }
 
 /** A canonical verse — Sanskrit/Awadhi original + translation. Never LLM-generated. */

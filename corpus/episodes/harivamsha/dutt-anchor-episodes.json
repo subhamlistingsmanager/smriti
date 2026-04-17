@@ -1,0 +1,74 @@
+[
+  {
+    "episode_id": "hv.vishnu.krishna_birth_devaki",
+    "source_text": "harivamsha",
+    "kanda_parva": "LIX. Birth of Krishna and Baladeva",
+    "characters": ["Krishna", "Devaki", "Vasudeva", "Rohini", "Yashoda", "Kansa"],
+    "location": "Mathura prison and Gokula",
+    "summary_en": "After Devaki's earlier children are killed, the eighth birth occurs at midnight. Krishna is born, Vasudeva carries him to Yashoda, and the children are exchanged to protect him from Kansa. The episode holds both cosmic wonder and parental terror.",
+    "source_excerpt": "In the auspicious midnight... Devaki gave birth... Vasudeva... repaired to the house of Yashoda... brought her daughter and placed her on Devaki's bed.",
+    "themes": ["birth under threat", "parental courage", "destiny and protection", "sacrifice"],
+    "emotional_situations": ["protecting a child under danger", "acting calmly in fear", "hope in a dark night"],
+    "linked_verses": ["gita.4.8"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "LIX"
+    }
+  },
+  {
+    "episode_id": "hv.vishnu.krishna_enters_mathura",
+    "source_text": "harivamsha",
+    "kanda_parva": "CI. Krishna's Arrival at Mathura",
+    "characters": ["Krishna", "Balarama", "Akrura", "Kansa", "Vasudeva", "Devaki"],
+    "location": "Mathura city",
+    "summary_en": "Krishna and Balarama leave Vraja and enter Mathura, where anticipation and fear converge. Kansa prepares public spectacle and covert violence. The city becomes the stage where a private prophecy turns into political reckoning.",
+    "source_excerpt": "Many... set out for Mathura... the two sons of Vasudeva entered the city while Kansa prepared the arena and his plan.",
+    "themes": ["arrival before reckoning", "public theatre of power", "destiny meeting politics"],
+    "emotional_situations": ["walking into a trap knowingly", "calm before confrontation"],
+    "linked_verses": ["gita.11.33"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "CI"
+    }
+  },
+  {
+    "episode_id": "hv.vishnu.chanura_mushtika_battle",
+    "source_text": "harivamsha",
+    "kanda_parva": "LXXXIV-LXXXV. Arena and wrestling",
+    "characters": ["Krishna", "Balarama", "Chanura", "Mushtika", "Kansa", "Devaki", "Vasudeva"],
+    "location": "Mathura wrestling arena",
+    "summary_en": "In Kansa's arena, Krishna and Balarama face champion wrestlers Chanura and Mushtika. The contest is framed as sport but charged as execution. Krishna and Balarama win decisively, and the fear structure around Kansa begins to collapse in public view.",
+    "source_excerpt": "Wrestling with Chanura... Krishna pressed his breast... Chanura... lay in the arena... Baladeva struck Mushtika... the arena grew void of wrestlers.",
+    "themes": ["courage under spectacle", "truth versus staged power", "public turning point"],
+    "emotional_situations": ["facing intimidation in front of a crowd", "breaking fear through action"],
+    "linked_verses": ["gita.2.3"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "LXXXIV-LXXXV"
+    }
+  },
+  {
+    "episode_id": "hv.vishnu.krishna_slays_kansa_bows_parents",
+    "source_text": "harivamsha",
+    "kanda_parva": "LXXXV. Kansa slain",
+    "characters": ["Krishna", "Kansa", "Balarama", "Vasudeva", "Devaki", "Ugrasena"],
+    "location": "Mathura arena and royal quarters",
+    "summary_en": "After Kansa insults Vasudeva and orders repression, Krishna leaps up, drags Kansa down, and kills him. The victory scene pivots immediately to tenderness: Krishna first bows at Vasudeva's and Devaki's feet. Justice is completed by restoration, not celebration alone.",
+    "source_excerpt": "Krishna drew Kansa by the hair... dragged him in the arena... when Kansa breathed his last... Krishna first touched Vasudeva's feet and afterwards bowed at the feet of his mother.",
+    "themes": ["tyrant's fall", "justice with restraint", "return to parents", "restoration after violence"],
+    "emotional_situations": ["confronting long-feared authority", "coming home after conflict", "softness after intensity"],
+    "linked_verses": ["gita.4.8", "gita.18.66"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "A Prose English Translation of Harivamsha, Manmatha Nath Dutt",
+      "url": "https://archive.org/stream/a-prose-english-translation-of-harivamsha/A%20Prose%20English%20Translation%20of%20Harivamsha_djvu.txt",
+      "locator": "LXXXV"
+    }
+  }
+]

@@ -34,6 +34,7 @@ export default function App() {
       try {
         await initEmbeddingModel();
         await initLlama();
+        // Full corpus is now the default runtime data source.
         await loadPlaceholderCorpus();
         setIsReady(true);
       } catch (err) {

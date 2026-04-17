@@ -1,14 +1,36 @@
 [
   {
-    "id": "gita.2.47",
+    "id": "gita.11.33",
     "source": "Bhagavad Gita",
-    "chapter": 2,
-    "verse": 47,
-    "sanskrit_devanagari": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
-    "sanskrit_iast": "karmaṇy-evādhikāras te mā phaleṣu kadācana | mā karma-phala-hetur bhūr mā te saṅgo 'stv akarmaṇi ||",
-    "english_meaning": "You have the right to perform your duty, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, and never be attached to inaction.",
-    "linked_episodes": ["mbh.bhishma.arjuna_vishada"],
-    "themes": ["duty without attachment to outcome", "doing what is right regardless of results", "letting go of expectation"]
+    "chapter": 11,
+    "verse": 33,
+    "sanskrit_devanagari": "तस्मात्त्वमुत्तिष्ठ यशो लभस्व जित्वा शत्रून् भुङ्क्ष्व राज्यं समृद्धम्। मयैवैते निहताः पूर्वमेव निमित्तमात्रं भव सव्यसाचिन्॥",
+    "sanskrit_iast": "tasmāt tvam uttiṣṭha yaśo labhasva jitvā śatrūn bhuṅkṣva rājyaṃ samṛddham, mayaivaite nihatāḥ pūrvam eva nimitta-mātraṃ bhava savyasācin",
+    "english_meaning": "Therefore arise and win glory. These warriors are already struck down by Me; be only the instrument.",
+    "linked_episodes": [
+      "mbh.bhishma.arjuna_vishada",
+      "hv.vishnu.krishna_enters_mathura"
+    ],
+    "themes": [
+      "instrumentality",
+      "courage"
+    ]
+  },
+  {
+    "id": "gita.18.66",
+    "source": "Bhagavad Gita",
+    "chapter": 18,
+    "verse": 66,
+    "sanskrit_devanagari": "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज। अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः॥",
+    "sanskrit_iast": "sarva-dharmān parityajya mām ekaṃ śaraṇaṃ vraja, ahaṃ tvāṃ sarva-pāpebhyo mokṣayiṣyāmi mā śucaḥ",
+    "english_meaning": "Abandon all limited notions of duty and take refuge in Me alone. I will free you from all sorrow and sin; do not grieve.",
+    "linked_episodes": [
+      "hv.vishnu.krishna_slays_kansa_bows_parents"
+    ],
+    "themes": [
+      "surrender",
+      "assurance"
+    ]
   },
   {
     "id": "gita.2.3",
@@ -16,38 +38,139 @@
     "chapter": 2,
     "verse": 3,
     "sanskrit_devanagari": "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते। क्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप॥",
-    "sanskrit_iast": "klaibyaṃ mā sma gamaḥ pārtha naitat tvayy upapadyate | kṣudraṃ hṛdaya-daurbalyaṃ tyaktvottiṣṭha parantapa ||",
-    "english_meaning": "Do not yield to this weakness of heart, O Partha. It does not become you. Cast off this petty faint-heartedness and arise, O scorcher of foes.",
-    "linked_episodes": ["mbh.bhishma.arjuna_vishada"],
-    "themes": ["overcoming paralysis", "being called to rise", "the voice that does not let you give up"]
+    "sanskrit_iast": "klaibyaṃ mā sma gamaḥ pārtha naitat tvayy upapadyate, kṣudraṃ hṛdaya-daurbalyaṃ tyaktvottiṣṭha parantapa",
+    "english_meaning": "Yield not to weakness, O Partha. It does not suit you. Cast off petty faint-heartedness and arise.",
+    "linked_episodes": [
+      "mbh.bhishma.arjuna_vishada",
+      "hv.vishnu.chanura_mushtika_battle"
+    ],
+    "themes": [
+      "inner strength",
+      "rising from paralysis"
+    ]
   },
   {
-    "id": "gita.11.33",
+    "id": "gita.2.47",
     "source": "Bhagavad Gita",
-    "chapter": 11,
-    "verse": 33,
-    "sanskrit_devanagari": "तस्मात्त्वमुत्तिष्ठ यशो लभस्व जित्वा शत्रून् भुङ्क्ष्व राज्यं समृद्धम्। मयैवैते निहताः पूर्वमेव निमित्तमात्रं भव सव्यसाचिन्॥",
-    "sanskrit_iast": "tasmāt tvam uttiṣṭha yaśo labhasva jitvā śatrūn bhuṅkṣva rājyaṃ samṛddham | mayaivaite nihatāḥ pūrvam eva nimitta-mātraṃ bhava savyasācin ||",
-    "english_meaning": "Therefore arise and win glory. Conquer your enemies and enjoy a prosperous kingdom. These warriors are already slain by Me. You are merely an instrument, O Savyasachin.",
-    "linked_episodes": ["mbh.bhishma.arjuna_vishada"],
-    "themes": ["accepting your role in something larger", "surrender to what must happen", "being an instrument not the author"]
+    "chapter": 2,
+    "verse": 47,
+    "sanskrit_devanagari": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
+    "sanskrit_iast": "karmaṇy-evādhikāras te mā phaleṣu kadācana, mā karma-phala-hetur bhūr mā te saṅgo 'stv akarmaṇi",
+    "english_meaning": "You have control over your action alone, never over its fruits. Do not act for results alone, and do not fall into inaction.",
+    "linked_episodes": [
+      "mbh.bhishma.arjuna_vishada",
+      "mbh.vana.draupadi_satyabhama"
+    ],
+    "themes": [
+      "duty",
+      "detachment",
+      "steady action"
+    ]
   },
   {
-    "id": "hanuman_chalisa.doha_1",
-    "source": "Hanuman Chalisa",
-    "sanskrit_devanagari": "श्रीगुरु चरन सरोज रज निज मनु मुकुरु सुधारि। बरनउँ रघुबर बिमल जसु जो दायकु फल चारि॥",
-    "sanskrit_iast": "śrī-guru carana saroja raja nija manu mukuru sudhāri | baranauṃ raghubara bimala jasu jo dāyaku phala cāri ||",
-    "english_meaning": "Having cleansed the mirror of my mind with the dust of my Guru's lotus feet, I sing the pure glory of Raghuvara, the bestower of the four fruits of life.",
-    "linked_episodes": ["ram.sundara.sita_ashoka_vatika"],
-    "themes": ["devotion", "surrender to the teacher", "beginning with humility"]
+    "id": "gita.2.50",
+    "source": "Bhagavad Gita",
+    "chapter": 2,
+    "verse": 50,
+    "sanskrit_devanagari": "बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते। तस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम्॥",
+    "sanskrit_iast": "buddhi-yukto jahātīha ubhe sukṛta-duṣkṛte, tasmād yogāya yujyasva yogaḥ karmasu kauśalam",
+    "english_meaning": "One established in wisdom drops both good and bad bondage here. Therefore engage in yoga; yoga is skill in action.",
+    "linked_episodes": [
+      "mbh.vana.pandava_agyatavasa_transition"
+    ],
+    "themes": [
+      "equanimity",
+      "skillful action"
+    ]
+  },
+  {
+    "id": "gita.4.8",
+    "source": "Bhagavad Gita",
+    "chapter": 4,
+    "verse": 8,
+    "sanskrit_devanagari": "परित्राणाय साधूनां विनाशाय च दुष्कृताम्। धर्मसंस्थापनार्थाय सम्भवामि युगे युगे॥",
+    "sanskrit_iast": "paritrāṇāya sādhūnāṃ vināśāya ca duṣkṛtām, dharma-saṃsthāpanārthāya sambhavāmi yuge yuge",
+    "english_meaning": "For protection of the good, destruction of evil, and establishment of dharma, I manifest age after age.",
+    "linked_episodes": [
+      "hv.vishnu.krishna_birth_devaki",
+      "hv.vishnu.krishna_slays_kansa_bows_parents"
+    ],
+    "themes": [
+      "restoration",
+      "dharma"
+    ]
+  },
+  {
+    "id": "gita.6.5",
+    "source": "Bhagavad Gita",
+    "chapter": 6,
+    "verse": 5,
+    "sanskrit_devanagari": "उद्धरेदात्मनाऽत्मानं नात्मानमवसादयेत्। आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः॥",
+    "sanskrit_iast": "uddhared ātmanātmānaṃ nātmānam avasādayet, ātmaiva hyātmano bandhur ātmaiva ripur ātmanaḥ",
+    "english_meaning": "Lift yourself by yourself; do not degrade yourself. The self is your friend, and the self is your enemy.",
+    "linked_episodes": [
+      "mbh.vana.nalopakhyana_opening"
+    ],
+    "themes": [
+      "self-mastery",
+      "recovery"
+    ]
   },
   {
     "id": "hanuman_chalisa.chaupai_17",
     "source": "Hanuman Chalisa",
     "sanskrit_devanagari": "राम दुआरे तुम रखवारे। होत न आज्ञा बिनु पैसारे॥",
-    "sanskrit_iast": "rāma duāre tuma rakhavāre | hota na ājñā binu paisāre ||",
-    "english_meaning": "You are the guardian at Rama's door. No one may enter without your permission.",
-    "linked_episodes": ["ram.sundara.sita_ashoka_vatika"],
-    "themes": ["devotion as guardianship", "loyalty", "the gatekeeper who serves out of love"]
+    "sanskrit_iast": "rāma duāre tuma rakhavāre, hota na ājñā binu paisāre",
+    "english_meaning": "You guard Rama's gate; none may pass without your grace.",
+    "linked_episodes": [
+      "ram.sundara.sita_hanuman_first_meeting"
+    ],
+    "themes": [
+      "guardianship",
+      "loyalty"
+    ]
+  },
+  {
+    "id": "hanuman_chalisa.doha_1",
+    "source": "Hanuman Chalisa",
+    "sanskrit_devanagari": "श्रीगुरु चरन सरोज रज निज मनु मुकुरु सुधारि। बरनउँ रघुबर बिमल जसु जो दायकु फल चारि॥",
+    "sanskrit_iast": "śrī-guru caraṇa saroja raja nija manu mukuru sudhāri, baranauṃ raghubara bimala jasu jo dāyaku phala cāri",
+    "english_meaning": "With the dust of the Guru's lotus feet I cleanse the mirror of my mind and sing the pure glory of Rama.",
+    "linked_episodes": [
+      "ram.yuddha.hanuman_sita_gem_token"
+    ],
+    "themes": [
+      "devotion",
+      "humility"
+    ]
+  },
+  {
+    "id": "mbh.key.yato_dharmas_tato_jayah",
+    "source": "Mahabharata key saying",
+    "sanskrit_devanagari": "यतो धर्मस्ततो जयः।",
+    "sanskrit_iast": "yato dharmas tato jayaḥ",
+    "english_meaning": "Where there is dharma, there is victory.",
+    "linked_episodes": [
+      "mbh.sabha.draupadi_vastraharan"
+    ],
+    "themes": [
+      "dharma",
+      "justice"
+    ]
+  },
+  {
+    "id": "ram.key.ramo_vigrahavan_dharmah",
+    "source": "Valmiki Ramayana key saying",
+    "sanskrit_devanagari": "रामो विग्रहवान् धर्मः।",
+    "sanskrit_iast": "rāmo vigrahavān dharmaḥ",
+    "english_meaning": "Rama is dharma embodied.",
+    "linked_episodes": [
+      "ram.ayodhya.bharata_refuses_throne",
+      "ram.yuddha.bharata_rama_reunion"
+    ],
+    "themes": [
+      "embodied ethics",
+      "righteous rule"
+    ]
   }
 ]

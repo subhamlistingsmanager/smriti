@@ -1,0 +1,74 @@
+[
+  {
+    "episode_id": "ram.ayodhya.bharata_refuses_throne",
+    "source_text": "ramayan",
+    "kanda_parva": "Ayodhya Kanda (Griffith), Cantos LXX-LCXXIX",
+    "characters": ["Bharata", "Kaikeyi", "Rama", "Sita", "Lakshmana", "Vasistha"],
+    "location": "Ayodhya and Chitrakut",
+    "summary_en": "Bharata returns to find Dasharatha dead and Rama exiled through Kaikeyi's demand. He rejects kingship gained by injustice, travels to Rama in the forest, and asks him to return. When Rama refuses due to dharma, Bharata places Rama's sandals on the throne and governs as trustee, not king.",
+    "source_excerpt": "Bharat, his son, refused to reign... Then Bharat, finding prayer was vain... with Rama's shoes upon his head, returned to rule in Rama's name.",
+    "themes": ["refusing unjust gain", "moral trusteeship", "brotherly loyalty", "integrity over power"],
+    "emotional_situations": ["inheriting benefit from someone else's suffering", "choosing legitimacy over convenience", "holding space for another person"],
+    "linked_verses": ["ram.key.ramo_vigrahavan_dharmah"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/ebooks/24869",
+      "locator": "Ayodhya Kanda"
+    }
+  },
+  {
+    "episode_id": "ram.sundara.sita_hanuman_first_meeting",
+    "source_text": "ramayan",
+    "kanda_parva": "Sundara Kanda, Cantos XXXII-XXXIV",
+    "characters": ["Sita", "Hanuman", "Ravana"],
+    "location": "Lanka, Ashoka grove",
+    "summary_en": "Hanuman finally reaches Sita in Ashoka grove. Starved by grief and surrounded by danger, she first doubts him, suspecting Ravana's trick. Hanuman speaks gently, names Rama and Lakshmana, and wins trust through truth rather than force. Hope returns slowly, not instantly.",
+    "source_excerpt": "Canto XXXII. Sita's Doubt... 'Tis Ravan... who tries to mock me with a new disguise... If thou art Rama's messenger, the glories of my lord repeat.",
+    "themes": ["trust after trauma", "hope under captivity", "discernment", "gentle reassurance"],
+    "emotional_situations": ["wanting to believe good news but being afraid", "testing trust carefully", "holding identity under pressure"],
+    "linked_verses": ["hanuman_chalisa.chaupai_17"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/ebooks/24869",
+      "locator": "Sundara Kanda, Cantos XXXII-XXXIV"
+    }
+  },
+  {
+    "episode_id": "ram.yuddha.hanuman_sita_gem_token",
+    "source_text": "ramayan",
+    "kanda_parva": "Sundara Kanda, Canto XXXVIII",
+    "characters": ["Sita", "Hanuman", "Rama"],
+    "location": "Lanka, Ashoka grove",
+    "summary_en": "When trust is established, Sita gives Hanuman a personal token for Rama. The token is not just proof of contact, but emotional continuity: memory, fidelity, and urgency carried across war. Hanuman becomes a bridge between despair and action.",
+    "source_excerpt": "How Sita gave a gem o'erjoyed... and Hanuman bore the sign to Rama.",
+    "themes": ["token of trust", "message across distance", "love under separation"],
+    "emotional_situations": ["needing tangible proof for loved ones", "sending hope through a messenger"],
+    "linked_verses": ["hanuman_chalisa.doha_1"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/ebooks/24869",
+      "locator": "Sundara Kanda, Canto XXXVIII"
+    }
+  },
+  {
+    "episode_id": "ram.yuddha.bharata_rama_reunion",
+    "source_text": "ramayan",
+    "kanda_parva": "Yuddha Kanda, Canto CXXIX",
+    "characters": ["Rama", "Bharata", "Sita", "Lakshmana", "Hanuman", "Shatrughna"],
+    "location": "Near Nandigrama, return to Ayodhya",
+    "summary_en": "When Rama returns after exile, Bharata greets him with reverence and relief, still carrying Rama's sandals. The reunion resolves a long moral tension: rule returns to rightful hands, and Bharata's trusteeship is completed without bitterness.",
+    "source_excerpt": "Still on his head... Rama's shoes he bore... Then Bharat clomb the car to greet his king and bowed him at his feet.",
+    "themes": ["fulfilled waiting", "duty completed", "reunion after vow", "legitimate return"],
+    "emotional_situations": ["keeping a promise for years", "returning responsibility with joy"],
+    "linked_verses": ["ram.key.ramo_vigrahavan_dharmah"],
+    "is_anchor_episode": true,
+    "source_ref": {
+      "title": "The Ramayan of Valmiki, tr. R.T.H. Griffith",
+      "url": "https://www.gutenberg.org/files/24869/24869-0.txt",
+      "locator": "Canto CXXIX"
+    }
+  }
+]
