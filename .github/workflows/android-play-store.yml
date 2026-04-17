@@ -43,4 +43,4 @@ jobs:
         run: npm ci
 
       - name: Build and submit to Google Play
-        run: npx eas build --platform android --profile production --non-interactive --auto-submit
+        run: eas build --platform android --profile production --non-interactive --auto-submit

@@ -51,7 +51,7 @@ jobs:
       - name: Build APK and capture links
         id: build_apk
         run: |
-          BUILD_JSON=$(npx eas build --platform android --profile "${{ inputs.profile }}" --non-interactive --wait --json)
+          BUILD_JSON=$(eas build --platform android --profile "${{ inputs.profile }}" --non-interactive --wait --json)
           echo "$BUILD_JSON" > build-result.json
 
           DETAILS_URL=$(node -e "const fs=require('fs'); const d=JSON.parse(fs.readFileSync('build-result.json','utf8')); const b=Array.isArray(d)?d[0]:d; console.log(b.buildDetailsPageUrl || '');")
