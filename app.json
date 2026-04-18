@@ -29,8 +29,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-dev-client",
-      "llama.rn"
+      "expo-dev-client"
     ]
   }
 }
