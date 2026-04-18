@@ -1,14 +1,17 @@
 import { create } from 'zustand';
 import { Message } from '../types/corpus';
 import { runPipeline, PipelineResult } from '../inference/pipeline';
+import { speak, stopSpeaking } from '../voice/tts';
 
 interface ConversationState {
   messages: Message[];
   isProcessing: boolean;
+  voiceMode: boolean;
   debugMode: boolean;
   debugPin: string;
 
   sendMessage: (text: string) => Promise<void>;
+  setVoiceMode: (enabled: boolean) => void;
   toggleDebugMode: (pin: string) => boolean;
   clearConversation: () => void;
 }
@@ -18,11 +21,16 @@ const DEBUG_PIN = '1947'; // Default PIN, user can change
 export const useConversationStore = create<ConversationState>((set, get) => ({
   messages: [],
   isProcessing: false,
+  voiceMode: true,
   debugMode: false,
   debugPin: DEBUG_PIN,
 
   sendMessage: async (text: string) => {
-    const { messages } = get();
+    const { messages, voiceMode } = get();
+
+    if (voiceMode) {
+      stopSpeaking();
+    }
 
     // Add user message
     const userMessage: Message = {
@@ -32,16 +40,42 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
       timestamp: Date.now(),
     };
 
-    set({ messages: [...messages, userMessage], isProcessing: true });
+    const smritiMessageId = `smriti_${Date.now()}_draft`;
+    const draftSmritiMessage: Message = {
+      id: smritiMessageId,
+      role: 'smriti',
+      text: '',
+      timestamp: Date.now(),
+    };
+
+    set({
+      messages: [...messages, userMessage, draftSmritiMessage],
+      isProcessing: true,
+    });
 
     try {
+      let lastStreamUpdate = 0;
       const result: PipelineResult = await runPipeline(
         text,
-        [...messages, userMessage]
+        [...messages, userMessage],
+        {
+          realtimeMode: true,
+          onResponseToken: (accumulatedText: string) => {
+            const now = Date.now();
+            if (now - lastStreamUpdate < 40) return;
+            lastStreamUpdate = now;
+
+            set((state) => ({
+              messages: state.messages.map((m) =>
+                m.id === smritiMessageId ? { ...m, text: accumulatedText } : m
+              ),
+            }));
+          },
+        }
       );
 
       const smritiMessage: Message = {
-        id: `smriti_${Date.now()}`,
+        id: smritiMessageId,
         role: 'smriti',
         text: result.response,
         timestamp: Date.now(),
@@ -65,24 +99,43 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
       };
 
       set((state) => ({
-        messages: [...state.messages, smritiMessage],
+        messages: state.messages.map((m) =>
+          m.id === smritiMessageId ? smritiMessage : m
+        ),
         isProcessing: false,
       }));
+
+      if (voiceMode && smritiMessage.text.trim().length > 0) {
+        void speak(smritiMessage.text);
+      }
     } catch (error) {
       console.error('[Conversation] Pipeline error:', error);
 
       const errorMessage: Message = {
-        id: `smriti_${Date.now()}`,
+        id: smritiMessageId,
         role: 'smriti',
         text: 'I am listening. Tell me more about what weighs on you.',
         timestamp: Date.now(),
       };
 
       set((state) => ({
-        messages: [...state.messages, errorMessage],
+        messages: state.messages.map((m) =>
+          m.id === smritiMessageId ? errorMessage : m
+        ),
         isProcessing: false,
       }));
+
+      if (voiceMode) {
+        void speak(errorMessage.text);
+      }
     }
+  },
+
+  setVoiceMode: (enabled: boolean) => {
+    if (!enabled) {
+      stopSpeaking();
+    }
+    set({ voiceMode: enabled });
   },
 
   toggleDebugMode: (pin: string) => {
@@ -94,6 +147,7 @@ export const useConversationStore = create<ConversationState>((set, get) => ({
   },
 
   clearConversation: () => {
+    stopSpeaking();
     set({ messages: [] });
   },
 }));

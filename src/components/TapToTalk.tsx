@@ -5,18 +5,18 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
-  KeyboardAvoidingView,
   Platform,
 } from 'react-native';
 
 interface Props {
   onSend: (text: string) => void;
   isProcessing: boolean;
+  voiceMode: boolean;
+  onToggleVoiceMode: () => void;
 }
 
-export function TapToTalk({ onSend, isProcessing }: Props) {
+export function TapToTalk({ onSend, isProcessing, voiceMode, onToggleVoiceMode }: Props) {
   const [text, setText] = useState('');
-  const [isVoiceMode, setIsVoiceMode] = useState(false);
 
   const handleSend = () => {
     const trimmed = text.trim();
@@ -26,57 +26,51 @@ export function TapToTalk({ onSend, isProcessing }: Props) {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      keyboardVerticalOffset={90}
-    >
-      <View style={styles.container}>
-        <View style={styles.inputRow}>
-          <TextInput
-            style={styles.textInput}
-            value={text}
-            onChangeText={setText}
-            placeholder="What is on your mind..."
-            placeholderTextColor="#B8A88A"
-            multiline
-            maxLength={2000}
-            editable={!isProcessing}
-            onSubmitEditing={handleSend}
-            returnKeyType="send"
-          />
+    <View style={styles.container}>
+      <View style={styles.inputRow}>
+        <TextInput
+          style={styles.textInput}
+          value={text}
+          onChangeText={setText}
+          placeholder="What is on your mind..."
+          placeholderTextColor="#B8A88A"
+          multiline
+          maxLength={2000}
+          editable={!isProcessing}
+          onSubmitEditing={handleSend}
+          returnKeyType="send"
+        />
 
-          {/* Voice button — placeholder for whisper.rn integration */}
-          <TouchableOpacity
-            style={styles.voiceButton}
-            onPress={() => setIsVoiceMode(!isVoiceMode)}
-            disabled={isProcessing}
-          >
-            <Text style={styles.voiceIcon}>
-              {isVoiceMode ? '⏹' : '🎙'}
-            </Text>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.voiceButton, voiceMode && styles.voiceButtonActive]}
+          onPress={onToggleVoiceMode}
+          disabled={isProcessing}
+        >
+          <Text style={styles.voiceIcon}>
+            {voiceMode ? '🎙' : '🔇'}
+          </Text>
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[
-              styles.sendButton,
-              (text.trim().length === 0 || isProcessing) && styles.sendButtonDisabled,
-            ]}
-            onPress={handleSend}
-            disabled={text.trim().length === 0 || isProcessing}
-          >
-            <Text style={styles.sendIcon}>↑</Text>
-          </TouchableOpacity>
-        </View>
-
-        {isVoiceMode && (
-          <View style={styles.voiceIndicator}>
-            <Text style={styles.voiceText}>
-              Listening... (tap to stop)
-            </Text>
-          </View>
-        )}
+        <TouchableOpacity
+          style={[
+            styles.sendButton,
+            (text.trim().length === 0 || isProcessing) && styles.sendButtonDisabled,
+          ]}
+          onPress={handleSend}
+          disabled={text.trim().length === 0 || isProcessing}
+        >
+          <Text style={styles.sendIcon}>↑</Text>
+        </TouchableOpacity>
       </View>
-    </KeyboardAvoidingView>
+
+      <View style={styles.voiceIndicator}>
+        <Text style={styles.voiceText}>
+          {voiceMode
+            ? 'Voice mode ON - replies are spoken automatically (local LLM + local TTS)'
+            : 'Voice mode OFF'}
+        </Text>
+      </View>
+    </View>
   );
 }
 
@@ -113,6 +107,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5EDE0',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  voiceButtonActive: {
+    backgroundColor: '#E9DFC9',
+    borderWidth: 1,
+    borderColor: '#B8860B',
   },
   voiceIcon: {
     fontSize: 18,

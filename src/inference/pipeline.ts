@@ -16,6 +16,11 @@ export interface PipelineResult {
   refusalPassed: boolean;
 }
 
+export interface PipelineOptions {
+  onResponseToken?: (accumulatedText: string) => void;
+  realtimeMode?: boolean;
+}
+
 /**
  * Full turn pipeline:
  * 1. Retrieve relevant episodes
@@ -26,10 +31,13 @@ export interface PipelineResult {
  */
 export async function runPipeline(
   userMessage: string,
-  conversationHistory: Message[]
+  conversationHistory: Message[],
+  options?: PipelineOptions
 ): Promise<PipelineResult> {
+  const realtimeMode = options?.realtimeMode ?? true;
+
   // Step 1: Retrieve
-  const retrievedEpisodes = await retrieveEpisodes(userMessage, 5);
+  const retrievedEpisodes = await retrieveEpisodes(userMessage, realtimeMode ? 3 : 5);
 
   // Step 2: Assemble prompt
   const prompt = assemblePrompt(
@@ -39,7 +47,14 @@ export async function runPipeline(
   );
 
   // Step 3: Generate
-  let rawOutput = await generate(prompt);
+  let rawOutput = await generate(prompt, {
+    onToken: options?.onResponseToken
+      ? (accumulatedText) => options.onResponseToken?.(accumulatedText)
+      : undefined,
+    maxTokens: realtimeMode ? 240 : undefined,
+    temperature: realtimeMode ? 0.65 : undefined,
+    topP: realtimeMode ? 0.9 : undefined,
+  });
   let response = rawOutput;
 
   // Step 4: Refusal check
@@ -52,7 +67,11 @@ export async function runPipeline(
     );
 
     // One retry
-    rawOutput = await generate(prompt);
+    rawOutput = await generate(prompt, {
+      maxTokens: realtimeMode ? 240 : undefined,
+      temperature: realtimeMode ? 0.65 : undefined,
+      topP: realtimeMode ? 0.9 : undefined,
+    });
     response = rawOutput;
     refusalResult = checkRefusal(response, retrievedEpisodes, allowedDevanagari);
 

@@ -17,11 +17,12 @@ interface Props {
 export function ConversationView({ messages, isProcessing }: Props) {
   const scrollRef = useRef<ScrollView>(null);
   const debugMode = useConversationStore((s) => s.debugMode);
+  const lastMessageText = messages[messages.length - 1]?.text ?? '';
 
   useEffect(() => {
-    // Scroll to bottom on new message
+    // Scroll to bottom on new message and while streamed text is growing.
     setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 100);
-  }, [messages.length]);
+  }, [messages.length, lastMessageText]);
 
   if (messages.length === 0) {
     return (
@@ -63,7 +64,7 @@ function MessageBubble({ message }: { message: Message }) {
         isUser ? styles.userBubble : styles.smritiBubble,
       ]}
     >
-      {!isUser && <Text style={styles.speakerName}>Smriti</Text>}
+      {!isUser && <Text style={styles.speakerName}>Shradha</Text>}
       <Text style={[styles.messageText, isUser && styles.userText]}>
         {message.text}
       </Text>
@@ -124,7 +125,7 @@ function ThinkingIndicator() {
 
   return (
     <Animated.View style={[styles.thinkingContainer, { opacity }]}>
-      <Text style={styles.thinkingText}>Smriti is reflecting...</Text>
+      <Text style={styles.thinkingText}>Shradha is reflecting...</Text>
     </Animated.View>
   );
 }

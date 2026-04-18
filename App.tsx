@@ -8,6 +8,8 @@ import {
   Modal,
   TextInput,
   Alert,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { ConversationView } from './src/components/ConversationView';
@@ -37,6 +39,8 @@ export default function App() {
   const isProcessing = useConversationStore((s) => s.isProcessing);
   const sendMessage = useConversationStore((s) => s.sendMessage);
   const debugMode = useConversationStore((s) => s.debugMode);
+  const voiceMode = useConversationStore((s) => s.voiceMode);
+  const setVoiceMode = useConversationStore((s) => s.setVoiceMode);
   const toggleDebugMode = useConversationStore((s) => s.toggleDebugMode);
 
   useEffect(() => {
@@ -109,76 +113,87 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="dark" />
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={0}
+    >
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="dark" />
 
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.title}>Smriti</Text>
-        <TouchableOpacity onPress={handleDebugToggle} style={styles.debugToggle}>
-          <Text style={styles.debugToggleText}>
-            {debugMode ? '◉' : '○'}
-          </Text>
-        </TouchableOpacity>
-      </View>
+        {/* Header */}
+        <View style={styles.header}>
+          <Text style={styles.title}>Shradha</Text>
+          <TouchableOpacity onPress={handleDebugToggle} style={styles.debugToggle}>
+            <Text style={styles.debugToggleText}>
+              {debugMode ? '◉' : '○'}
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-      {/* Ambient background */}
-      {messages.length === 0 && <AmbientIllustration />}
+        {/* Ambient background */}
+        {messages.length === 0 && <AmbientIllustration />}
 
-      {/* Conversation */}
-      <ConversationView messages={messages} isProcessing={isProcessing} />
+        {/* Conversation */}
+        <ConversationView messages={messages} isProcessing={isProcessing} />
 
-      {/* Input */}
-      <TapToTalk onSend={sendMessage} isProcessing={isProcessing} />
+        {/* Input */}
+        <TapToTalk
+          onSend={sendMessage}
+          isProcessing={isProcessing}
+          voiceMode={voiceMode}
+          onToggleVoiceMode={() => setVoiceMode(!voiceMode)}
+        />
 
-      {/* PIN Modal */}
-      <Modal visible={showPinModal} transparent animationType="fade">
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Enter Debug PIN</Text>
-            <TextInput
-              style={styles.pinInput}
-              value={pinInput}
-              onChangeText={setPinInput}
-              keyboardType="number-pad"
-              maxLength={4}
-              secureTextEntry
-              autoFocus
-              onSubmitEditing={handlePinSubmit}
-            />
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                onPress={() => setShowPinModal(false)}
-                style={styles.modalButton}
-              >
-                <Text style={styles.modalButtonText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={handlePinSubmit}
-                style={[styles.modalButton, styles.modalButtonPrimary]}
-              >
-                <Text style={[styles.modalButtonText, styles.modalButtonTextPrimary]}>
-                  Enter
-                </Text>
-              </TouchableOpacity>
+        {/* PIN Modal */}
+        <Modal visible={showPinModal} transparent animationType="fade">
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalTitle}>Enter Debug PIN</Text>
+              <TextInput
+                style={styles.pinInput}
+                value={pinInput}
+                onChangeText={setPinInput}
+                keyboardType="number-pad"
+                maxLength={4}
+                secureTextEntry
+                autoFocus
+                onSubmitEditing={handlePinSubmit}
+              />
+              <View style={styles.modalButtons}>
+                <TouchableOpacity
+                  onPress={() => setShowPinModal(false)}
+                  style={styles.modalButton}
+                >
+                  <Text style={styles.modalButtonText}>Cancel</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={handlePinSubmit}
+                  style={[styles.modalButton, styles.modalButtonPrimary]}
+                >
+                  <Text style={[styles.modalButtonText, styles.modalButtonTextPrimary]}>
+                    Enter
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </View>
-      </Modal>
-    </SafeAreaView>
+        </Modal>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
 
 function renderPhaseMessage(phase: InitPhase): string {
   switch (phase) {
     case 'downloading':
-      return 'Smriti is gathering her memories... (first launch only)';
+      return 'Shradha is gathering her memories... (first launch only)';
     case 'loading':
-      return 'Smriti is settling in...';
+      return 'Shradha is settling in...';
     case 'error':
-      return 'Something went wrong waking Smriti up.';
+      return 'Something went wrong waking Shradha up.';
     default:
-      return 'Smriti is waking up...';
+      return 'Shradha is waking up...';
   }
 }
 

@@ -10,6 +10,13 @@ export interface LlamaConfig {
   topP: number;
 }
 
+export interface GenerateOptions {
+  onToken?: (accumulatedText: string, token: string) => void;
+  maxTokens?: number;
+  temperature?: number;
+  topP?: number;
+}
+
 const DEFAULT_CONFIG: LlamaConfig = {
   modelPath: '',
   contextSize: 2048,
@@ -47,17 +54,31 @@ export async function initLlama(config?: Partial<LlamaConfig>): Promise<void> {
   console.log('[Llama] Model loaded from', currentConfig.modelPath);
 }
 
-export async function generate(prompt: string): Promise<string> {
+export async function generate(
+  prompt: string,
+  options?: GenerateOptions
+): Promise<string> {
   if (!llamaContext) return stubGenerate(prompt);
+
+  let streamed = '';
+  const maxTokens = options?.maxTokens ?? currentConfig.maxTokens;
+  const temperature = options?.temperature ?? currentConfig.temperature;
+  const topP = options?.topP ?? currentConfig.topP;
 
   const result = await llamaContext.completion({
     prompt,
-    n_predict: currentConfig.maxTokens,
-    temperature: currentConfig.temperature,
-    top_p: currentConfig.topP,
+    n_predict: maxTokens,
+    temperature,
+    top_p: topP,
     top_k: 40,
     penalty_repeat: 1.1,
     stop: STOP_TOKENS,
+  }, (data) => {
+    if (!options?.onToken) return;
+
+    const token = data.token ?? '';
+    streamed = data.accumulated_text ?? `${streamed}${token}`;
+    options.onToken(streamed, token);
   });
   return (result.text ?? '').trim();
 }
