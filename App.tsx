@@ -169,6 +169,23 @@ export default function App() {
   );
 }
 
+function renderPhaseMessage(phase: InitPhase): string {
+  switch (phase) {
+    case 'downloading':
+      return 'Smriti is gathering her memories... (first launch only)';
+    case 'loading':
+      return 'Smriti is settling in...';
+    case 'error':
+      return 'Something went wrong waking Smriti up.';
+    default:
+      return 'Smriti is waking up...';
+  }
+}
+
+function formatMB(bytes: number): string {
+  return (bytes / (1024 * 1024)).toFixed(0);
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -179,11 +196,36 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF9F0',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 32,
   },
   loadingText: {
     fontSize: 18,
     color: '#8B7355',
     fontStyle: 'italic',
+    textAlign: 'center',
+  },
+  progressBarTrack: {
+    width: '80%',
+    height: 6,
+    backgroundColor: '#E8DCC8',
+    borderRadius: 3,
+    marginTop: 24,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    height: '100%',
+    backgroundColor: '#B8860B',
+  },
+  progressText: {
+    marginTop: 12,
+    fontSize: 14,
+    color: '#8B7355',
+  },
+  errorText: {
+    marginTop: 16,
+    fontSize: 13,
+    color: '#8B3A3A',
+    textAlign: 'center',
   },
   header: {
     flexDirection: 'row',
