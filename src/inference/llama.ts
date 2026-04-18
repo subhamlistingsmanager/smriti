@@ -1,7 +1,6 @@
-/**
- * llama.rn wrapper for on-device inference.
- * Stub for v0 — returns template responses until a real GGUF model is loaded.
- */
+import { Platform } from 'react-native';
+import { initLlama as llamaInit, LlamaContext } from 'llama.rn';
+import { getModelPath } from './model-download';
 
 export interface LlamaConfig {
   modelPath: string;
@@ -19,28 +18,48 @@ const DEFAULT_CONFIG: LlamaConfig = {
   topP: 0.9,
 };
 
-let llamaContext: any = null;
+const STOP_TOKENS = ['Person:', '\nPerson:', '---', '<end_of_turn>', '<|im_end|>'];
+
+let llamaContext: LlamaContext | null = null;
 let currentConfig: LlamaConfig = DEFAULT_CONFIG;
 
 export async function initLlama(config?: Partial<LlamaConfig>): Promise<void> {
   currentConfig = { ...DEFAULT_CONFIG, ...config };
+  if (!currentConfig.modelPath) currentConfig.modelPath = getModelPath();
 
-  // TODO: Real llama.rn initialization
-  // import { initLlama as llamaInit } from 'llama.rn';
-  // llamaContext = await llamaInit({ model: currentConfig.modelPath, ... });
-  console.log('[Llama] Stub mode — returning template responses');
+  if (Platform.OS === 'web') {
+    console.log('[Llama] Web platform — stub mode only');
+    return;
+  }
+
+  if (llamaContext) {
+    await llamaContext.release();
+    llamaContext = null;
+  }
+
+  llamaContext = await llamaInit({
+    model: currentConfig.modelPath,
+    n_ctx: currentConfig.contextSize,
+    n_gpu_layers: Platform.OS === 'ios' ? 99 : 0,
+    n_batch: 512,
+    use_mlock: false,
+  });
+  console.log('[Llama] Model loaded from', currentConfig.modelPath);
 }
 
 export async function generate(prompt: string): Promise<string> {
-  if (llamaContext) {
-    // TODO: Real inference
-    // const result = await llamaContext.completion({ prompt, ... });
-    // return result.text;
-    throw new Error('Real llama.rn inference not yet implemented');
-  }
+  if (!llamaContext) return stubGenerate(prompt);
 
-  // Stub: return a template response that mimics Smriti's tone
-  return stubGenerate(prompt);
+  const result = await llamaContext.completion({
+    prompt,
+    n_predict: currentConfig.maxTokens,
+    temperature: currentConfig.temperature,
+    top_p: currentConfig.topP,
+    top_k: 40,
+    penalty_repeat: 1.1,
+    stop: STOP_TOKENS,
+  });
+  return (result.text ?? '').trim();
 }
 
 function stubGenerate(_prompt: string): string {
@@ -50,7 +69,7 @@ function stubGenerate(_prompt: string): string {
     'this way — uncertain, torn between what the heart wants and what ' +
     'dharma asks. Let me share what happened, and perhaps you will find ' +
     'something in it that speaks to your own situation.\n\n' +
-    '[Stub response — real LLM output will replace this when the model is loaded]'
+    '[Stub response — model not loaded on this platform]'
   );
 }
 
@@ -60,4 +79,11 @@ export function isModelLoaded(): boolean {
 
 export function getConfig(): LlamaConfig {
   return { ...currentConfig };
+}
+
+export async function releaseLlama(): Promise<void> {
+  if (llamaContext) {
+    await llamaContext.release();
+    llamaContext = null;
+  }
 }

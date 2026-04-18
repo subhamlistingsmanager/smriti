@@ -16,10 +16,20 @@ import { AmbientIllustration } from './src/components/AmbientIllustration';
 import { useConversationStore } from './src/store/conversation';
 import { initEmbeddingModel } from './src/retrieval/embeddings';
 import { initLlama } from './src/inference/llama';
+import {
+  downloadModel,
+  isModelDownloaded,
+  DownloadProgress,
+} from './src/inference/model-download';
 import { loadPlaceholderCorpus } from './src/retrieval/loader';
+
+type InitPhase = 'starting' | 'downloading' | 'loading' | 'ready' | 'error';
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
+  const [phase, setPhase] = useState<InitPhase>('starting');
+  const [progress, setProgress] = useState<DownloadProgress | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [showPinModal, setShowPinModal] = useState(false);
   const [pinInput, setPinInput] = useState('');
 
@@ -33,12 +43,22 @@ export default function App() {
     async function init() {
       try {
         await initEmbeddingModel();
-        await initLlama();
-        // Full corpus is now the default runtime data source.
         await loadPlaceholderCorpus();
+
+        if (!(await isModelDownloaded())) {
+          setPhase('downloading');
+          await downloadModel((p) => setProgress(p));
+        }
+
+        setPhase('loading');
+        await initLlama();
+
+        setPhase('ready');
         setIsReady(true);
       } catch (err) {
         console.error('[App] Init failed:', err);
+        setErrorMsg(err instanceof Error ? err.message : String(err));
+        setPhase('error');
       }
     }
     init();
@@ -64,7 +84,25 @@ export default function App() {
   if (!isReady) {
     return (
       <View style={styles.loadingContainer}>
-        <Text style={styles.loadingText}>Smriti is waking up...</Text>
+        <Text style={styles.loadingText}>{renderPhaseMessage(phase)}</Text>
+        {phase === 'downloading' && progress && (
+          <>
+            <View style={styles.progressBarTrack}>
+              <View
+                style={[
+                  styles.progressBarFill,
+                  { width: `${Math.round(progress.fraction * 100)}%` },
+                ]}
+              />
+            </View>
+            <Text style={styles.progressText}>
+              {formatMB(progress.bytesWritten)} / {formatMB(progress.totalBytes)} MB
+            </Text>
+          </>
+        )}
+        {phase === 'error' && errorMsg && (
+          <Text style={styles.errorText}>{errorMsg}</Text>
+        )}
         <StatusBar style="dark" />
       </View>
     );
