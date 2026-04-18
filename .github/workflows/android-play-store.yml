@@ -15,6 +15,7 @@ jobs:
 
     env:
       EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
     steps:
       - name: Check Expo token
@@ -38,6 +39,11 @@ jobs:
         with:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Verify EAS auth
+        run: |
+          eas --version
+          eas whoami
 
       - name: Install dependencies
         run: npm ci
