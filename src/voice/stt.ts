@@ -4,7 +4,6 @@
  */
 
 import { Audio } from 'expo-av';
-import * as FileSystem from 'expo-file-system';
 
 let recording: Audio.Recording | null = null;
 let isInitialized = false;
@@ -26,7 +25,7 @@ export async function initSTT(apiKey?: string): Promise<void> {
       playThroughEarpieceAndroid: false,
     });
 
-    whisperApiKey = apiKey;
+    whisperApiKey = apiKey ?? null;
     isInitialized = true;
     console.log('[STT] Initialized with expo-av');
   } catch (error) {
@@ -45,28 +44,9 @@ export async function startRecording(): Promise<void> {
       await recording.stopAndUnloadAsync();
     }
 
-    const { recording: newRecording } = await Audio.startRecordingAsync({
-      ios: {
-        extension: '.m4a',
-        outputFormat: Audio.RecordingOptionsPresets.HIGH_QUALITY.ios.outputFormat,
-        audioQuality: Audio.RecordingOptionsPresets.HIGH_QUALITY.ios.audioQuality,
-        sampleRate: 16000,
-        numberOfChannels: 1,
-        bitRate: 128000,
-      },
-      android: {
-        extension: '.m4a',
-        outputFormat: Audio.RecordingOptionsPresets.HIGH_QUALITY.android.outputFormat,
-        audioQuality: Audio.RecordingOptionsPresets.HIGH_QUALITY.android.audioQuality,
-        sampleRate: 16000,
-        numberOfChannels: 1,
-        bitRate: 128000,
-      },
-      web: {
-        mimeType: 'audio/webm',
-        bitsPerSecond: 128000,
-      },
-    });
+    const { recording: newRecording } = await Audio.Recording.createAsync(
+      Audio.RecordingOptionsPresets.HIGH_QUALITY
+    );
 
     recording = newRecording;
     console.log('[STT] Recording started');
@@ -110,11 +90,6 @@ export async function transcribe(audioUri: string): Promise<string> {
   }
 
   try {
-    // Read audio file as base64
-    const base64Audio = await FileSystem.readAsStringAsync(audioUri, {
-      encoding: FileSystem.EncodingType.Base64,
-    });
-
     // Send to Whisper API
     const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
       method: 'POST',
@@ -143,13 +118,6 @@ export async function transcribe(audioUri: string): Promise<string> {
     const text = result.text || '';
 
     console.log('[STT] Transcription successful:', text);
-
-    // Clean up audio file
-    try {
-      await FileSystem.deleteAsync(audioUri);
-    } catch (e) {
-      console.warn('[STT] Failed to delete recording:', e);
-    }
 
     return text;
   } catch (error) {
