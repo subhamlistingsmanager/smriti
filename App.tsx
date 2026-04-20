@@ -56,13 +56,6 @@ export default function App() {
 
         setPhase('ready');
         setIsReady(true);
-
-        // Load the local model in the background so startup stays responsive.
-        void import('./src/inference/llama')
-          .then(({ ensureLlamaReady }) => ensureLlamaReady())
-          .catch((backgroundError) => {
-            console.warn('[App] Background model init failed:', backgroundError);
-          });
       } catch (err) {
         console.error('[App] Init failed:', err);
         setErrorMsg(err instanceof Error ? err.message : String(err));
