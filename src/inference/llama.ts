@@ -26,6 +26,10 @@ const DEFAULT_CONFIG: LlamaConfig = {
 };
 
 const STOP_TOKENS = ['Person:', '\nPerson:', '---', '<end_of_turn>', '<|im_end|>'];
+const IS_ANDROID = Platform.OS === 'android';
+const ANDROID_SAFE_CTX = 768;
+const ANDROID_SAFE_BATCH = 128;
+const ANDROID_SAFE_MAX_TOKENS = 160;
 
 let llamaContext: LlamaContext | null = null;
 let currentConfig: LlamaConfig = DEFAULT_CONFIG;
@@ -46,11 +50,15 @@ export async function initLlama(config?: Partial<LlamaConfig>): Promise<void> {
     llamaContext = null;
   }
 
+  const nCtx = IS_ANDROID
+    ? Math.min(currentConfig.contextSize, ANDROID_SAFE_CTX)
+    : currentConfig.contextSize;
+
   llamaContext = await llamaInit({
     model: currentConfig.modelPath,
-    n_ctx: currentConfig.contextSize,
+    n_ctx: nCtx,
     n_gpu_layers: Platform.OS === 'ios' ? 99 : 0,
-    n_batch: 512,
+    n_batch: IS_ANDROID ? ANDROID_SAFE_BATCH : 512,
     use_mlock: false,
   });
   initFailed = false;
@@ -89,11 +97,19 @@ export async function generate(
   }
 
   let streamed = '';
-  const maxTokens = options?.maxTokens ?? currentConfig.maxTokens;
+  const configuredMaxTokens = options?.maxTokens ?? currentConfig.maxTokens;
+  const maxTokens = IS_ANDROID
+    ? Math.min(configuredMaxTokens, ANDROID_SAFE_MAX_TOKENS)
+    : configuredMaxTokens;
   const temperature = options?.temperature ?? currentConfig.temperature;
   const topP = options?.topP ?? currentConfig.topP;
+  const context = llamaContext;
 
-  const result = await llamaContext.completion({
+  if (!context) {
+    return stubGenerate(prompt);
+  }
+
+  const result = await context.completion({
     prompt,
     n_predict: maxTokens,
     temperature,

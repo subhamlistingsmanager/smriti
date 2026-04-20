@@ -51,7 +51,7 @@ export async function runPipeline(
     onToken: options?.onResponseToken
       ? (accumulatedText) => options.onResponseToken?.(accumulatedText)
       : undefined,
-    maxTokens: realtimeMode ? 320 : undefined,
+    maxTokens: realtimeMode ? 192 : undefined,
     temperature: realtimeMode ? 0.72 : undefined,
     topP: realtimeMode ? 0.92 : undefined,
   });
@@ -68,7 +68,7 @@ export async function runPipeline(
 
     // One retry
     rawOutput = await generate(prompt, {
-      maxTokens: realtimeMode ? 320 : undefined,
+      maxTokens: realtimeMode ? 192 : undefined,
       temperature: realtimeMode ? 0.72 : undefined,
       topP: realtimeMode ? 0.92 : undefined,
     });
