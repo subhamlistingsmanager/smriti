@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1080 2340" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="1080" height="2340" fill="#130D0A"/>
+  
+  <!-- Halo rings for atmospheric depth -->
+  <circle cx="540" cy="800" r="280" fill="none" stroke="#A8321F" stroke-width="3" opacity="0.3"/>
+  <circle cx="540" cy="800" r="180" fill="none" stroke="#D95A1A" stroke-width="2" opacity="0.4"/>
+  <circle cx="540" cy="800" r="80" fill="none" stroke="#F2AE3D" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Pillar/shrine base -->
+  <rect x="480" y="850" width="120" height="180" fill="#3E2016" opacity="0.7"/>
+  
+  <!-- Flame core -->
+  <circle cx="540" cy="800" r="40" fill="#FCE7A6" opacity="0.8"/>
+  <circle cx="540" cy="800" r="30" fill="#F2AE3D" opacity="0.9"/>
+  
+  <!-- Brand text -->
+  <text x="540" y="1200" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="#F2AE3D">
+    Sankat Sathi
+  </text>
+  <text x="540" y="1320" font-family="system-ui, -apple-system, sans-serif" font-size="48" text-anchor="middle" fill="#F7E5BE" opacity="0.8">
+    Converse with Hanuman Ji
+  </text>
+  
+  <!-- Decorative bottom accent -->
+  <line x1="240" y1="1450" x2="840" y2="1450" stroke="#F2AE3D" stroke-width="3" opacity="0.4"/>
+</svg>

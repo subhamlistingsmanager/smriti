@@ -2,15 +2,16 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 /**
- * Soft ambient background — a warm glow suggesting a diya.
- * SVG illustrations will replace this in the design pass.
+ * Ambient scene for the conversation opening state.
  */
 export function AmbientIllustration() {
   return (
     <View style={styles.container}>
-      <View style={styles.glowOuter} />
-      <View style={styles.glowInner} />
-      <View style={styles.flame} />
+      <View style={styles.haloLarge} />
+      <View style={styles.haloMid} />
+      <View style={styles.haloSmall} />
+      <View style={styles.pillar} />
+      <View style={styles.flameCore} />
     </View>
   );
 }
@@ -18,30 +19,45 @@ export function AmbientIllustration() {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 120,
+    bottom: 136,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    opacity: 0.15,
+    opacity: 0.22,
   },
-  glowOuter: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    backgroundColor: '#F5A623',
+  haloLarge: {
+    width: 260,
+    height: 260,
+    borderRadius: 130,
+    backgroundColor: '#A8321F',
   },
-  glowInner: {
+  haloMid: {
     position: 'absolute',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    backgroundColor: '#F7C948',
+    width: 180,
+    height: 180,
+    borderRadius: 90,
+    backgroundColor: '#D95A1A',
   },
-  flame: {
+  haloSmall: {
     position: 'absolute',
-    width: 40,
-    height: 60,
+    width: 112,
+    height: 112,
+    borderRadius: 56,
+    backgroundColor: '#F2AE3D',
+  },
+  pillar: {
+    position: 'absolute',
+    bottom: -50,
+    width: 70,
+    height: 92,
+    borderRadius: 16,
+    backgroundColor: '#3E2016',
+  },
+  flameCore: {
+    position: 'absolute',
+    width: 38,
+    height: 56,
     borderRadius: 20,
-    backgroundColor: '#FFD700',
+    backgroundColor: '#FCE7A6',
   },
 });

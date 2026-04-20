@@ -28,7 +28,7 @@ export function ConversationView({ messages, isProcessing }: Props) {
     return (
       <View style={styles.emptyContainer}>
         <Text style={styles.emptyText}>
-          What is on your mind?{'\n'}I am here to listen.
+          Speak freely.{'\n'}Hanuman Ji is listening.
         </Text>
       </View>
     );
@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: 20,
-    paddingBottom: 40,
+    padding: 18,
+    paddingBottom: 28,
   },
   emptyContainer: {
     flex: 1,
@@ -146,30 +146,41 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 18,
-    color: '#8B7355',
+    color: '#F1D8A6',
     textAlign: 'center',
-    fontStyle: 'italic',
+    fontFamily: 'serif',
     lineHeight: 28,
+    textShadowColor: 'rgba(0,0,0,0.28)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 1,
   },
   bubble: {
     marginBottom: 16,
     padding: 16,
-    borderRadius: 16,
+    borderRadius: 18,
     maxWidth: '90%',
   },
   userBubble: {
     alignSelf: 'flex-end',
-    backgroundColor: '#F5EDE0',
+    backgroundColor: '#F2D7B5',
     borderBottomRightRadius: 4,
+    borderWidth: 1,
+    borderColor: '#E8BB83',
   },
   smritiBubble: {
     alignSelf: 'flex-start',
-    backgroundColor: 'transparent',
-    paddingHorizontal: 4,
+    backgroundColor: 'rgba(37,23,17,0.74)',
+    borderWidth: 1,
+    borderColor: 'rgba(242,174,61,0.35)',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 2,
   },
   speakerName: {
     fontSize: 12,
-    color: '#B8860B',
+    color: '#F2AE3D',
     marginBottom: 6,
     fontWeight: '600',
     letterSpacing: 1,
@@ -178,28 +189,33 @@ const styles = StyleSheet.create({
   messageText: {
     fontSize: 16,
     lineHeight: 26,
-    color: '#3E2723',
+    color: '#F7E5BE',
   },
   userText: {
-    color: '#5D4037',
+    color: '#402015',
   },
   thinkingContainer: {
     alignSelf: 'flex-start',
-    padding: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    backgroundColor: 'rgba(37,23,17,0.6)',
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: 'rgba(242,174,61,0.25)',
   },
   thinkingText: {
     fontSize: 14,
-    color: '#8B7355',
+    color: '#E3C98F',
     fontStyle: 'italic',
   },
   debugContainer: {
     marginLeft: 4,
     marginBottom: 16,
     padding: 12,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: '#2D201A',
     borderRadius: 8,
     borderLeftWidth: 3,
-    borderLeftColor: '#F5A623',
+    borderLeftColor: '#F2AE3D',
   },
   debugLabel: {
     fontSize: 11,
@@ -210,7 +226,7 @@ const styles = StyleSheet.create({
   },
   debugText: {
     fontSize: 12,
-    color: '#795548',
+    color: '#E6CFAC',
     lineHeight: 18,
     marginBottom: 2,
   },

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Shradha",
-    "slug": "shradha",
+    "name": "Sankat Sathi",
+    "slug": "sankat-sathi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#130D0A"
     },
     "ios": {
       "supportsTablet": true
@@ -21,7 +21,7 @@
       "softwareKeyboardLayoutMode": "resize",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#130D0A"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
