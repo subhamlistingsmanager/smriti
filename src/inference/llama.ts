@@ -29,6 +29,8 @@ const STOP_TOKENS = ['Person:', '\nPerson:', '---', '<end_of_turn>', '<|im_end|>
 
 let llamaContext: LlamaContext | null = null;
 let currentConfig: LlamaConfig = DEFAULT_CONFIG;
+let initPromise: Promise<void> | null = null;
+let initFailed = false;
 
 export async function initLlama(config?: Partial<LlamaConfig>): Promise<void> {
   currentConfig = { ...DEFAULT_CONFIG, ...config };
@@ -51,14 +53,40 @@ export async function initLlama(config?: Partial<LlamaConfig>): Promise<void> {
     n_batch: 512,
     use_mlock: false,
   });
+  initFailed = false;
   console.log('[Llama] Model loaded from', currentConfig.modelPath);
+}
+
+export async function ensureLlamaReady(): Promise<boolean> {
+  if (llamaContext) {
+    return true;
+  }
+
+  if (initFailed) {
+    return false;
+  }
+
+  if (!initPromise) {
+    initPromise = initLlama().catch((error) => {
+      initFailed = true;
+      console.warn('[Llama] Falling back to stub mode:', error);
+    }).finally(() => {
+      initPromise = null;
+    });
+  }
+
+  await initPromise;
+  return llamaContext !== null;
 }
 
 export async function generate(
   prompt: string,
   options?: GenerateOptions
 ): Promise<string> {
-  if (!llamaContext) return stubGenerate(prompt);
+  if (!llamaContext) {
+    const ready = await ensureLlamaReady();
+    if (!ready) return stubGenerate(prompt);
+  }
 
   let streamed = '';
   const maxTokens = options?.maxTokens ?? currentConfig.maxTokens;

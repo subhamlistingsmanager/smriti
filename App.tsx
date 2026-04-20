@@ -17,7 +17,6 @@ import { TapToTalk } from './src/components/TapToTalk';
 import { AmbientIllustration } from './src/components/AmbientIllustration';
 import { useConversationStore } from './src/store/conversation';
 import { initEmbeddingModel } from './src/retrieval/embeddings';
-import { initLlama } from './src/inference/llama';
 import {
   downloadModel,
   isModelDownloaded,
@@ -55,11 +54,15 @@ export default function App() {
           await downloadModel((p) => setProgress(p));
         }
 
-        setPhase('loading');
-        await initLlama();
-
         setPhase('ready');
         setIsReady(true);
+
+        // Load the local model in the background so startup stays responsive.
+        void import('./src/inference/llama')
+          .then(({ ensureLlamaReady }) => ensureLlamaReady())
+          .catch((backgroundError) => {
+            console.warn('[App] Background model init failed:', backgroundError);
+          });
       } catch (err) {
         console.error('[App] Init failed:', err);
         setErrorMsg(err instanceof Error ? err.message : String(err));
