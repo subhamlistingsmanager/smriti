@@ -123,7 +123,7 @@ export default function App() {
 
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>Shradha</Text>
+          <Text style={styles.title}>Hanuman Ji</Text>
           <TouchableOpacity onPress={handleDebugToggle} style={styles.debugToggle}>
             <Text style={styles.debugToggleText}>
               {debugMode ? '◉' : '○'}
@@ -187,13 +187,13 @@ export default function App() {
 function renderPhaseMessage(phase: InitPhase): string {
   switch (phase) {
     case 'downloading':
-      return 'Shradha is gathering her memories... (first launch only)';
+      return 'Hanuman Ji is gathering the kathas... (first launch only)';
     case 'loading':
-      return 'Shradha is settling in...';
+      return 'Hanuman Ji is settling in...';
     case 'error':
-      return 'Something went wrong waking Shradha up.';
+      return 'Something went wrong waking Hanuman Ji up.';
     default:
-      return 'Shradha is waking up...';
+      return 'Hanuman Ji is waking up...';
   }
 }
 

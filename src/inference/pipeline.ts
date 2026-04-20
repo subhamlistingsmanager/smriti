@@ -51,9 +51,9 @@ export async function runPipeline(
     onToken: options?.onResponseToken
       ? (accumulatedText) => options.onResponseToken?.(accumulatedText)
       : undefined,
-    maxTokens: realtimeMode ? 240 : undefined,
-    temperature: realtimeMode ? 0.65 : undefined,
-    topP: realtimeMode ? 0.9 : undefined,
+    maxTokens: realtimeMode ? 320 : undefined,
+    temperature: realtimeMode ? 0.72 : undefined,
+    topP: realtimeMode ? 0.92 : undefined,
   });
   let response = rawOutput;
 
@@ -68,9 +68,9 @@ export async function runPipeline(
 
     // One retry
     rawOutput = await generate(prompt, {
-      maxTokens: realtimeMode ? 240 : undefined,
-      temperature: realtimeMode ? 0.65 : undefined,
-      topP: realtimeMode ? 0.9 : undefined,
+      maxTokens: realtimeMode ? 320 : undefined,
+      temperature: realtimeMode ? 0.72 : undefined,
+      topP: realtimeMode ? 0.92 : undefined,
     });
     response = rawOutput;
     refusalResult = checkRefusal(response, retrievedEpisodes, allowedDevanagari);

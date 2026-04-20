@@ -1,9 +1,9 @@
 import * as FileSystem from 'expo-file-system/legacy';
 
-export const MODEL_FILENAME = 'gemma-2-2b-it-Q4_K_M.gguf';
+export const MODEL_FILENAME = 'gemma-4-E2B-it-Q3_K_S.gguf';
 export const MODEL_URL =
-  'https://huggingface.co/bartowski/gemma-2-2b-it-GGUF/resolve/main/gemma-2-2b-it-Q4_K_M.gguf';
-const MIN_EXPECTED_BYTES = 1_500_000_000;
+  'https://huggingface.co/unsloth/gemma-4-E2B-it-GGUF/resolve/main/gemma-4-E2B-it-Q3_K_S.gguf';
+const MIN_EXPECTED_BYTES = 2_300_000_000;
 
 export interface DownloadProgress {
   bytesWritten: number;
@@ -16,7 +16,7 @@ export function getModelPath(): string {
 }
 
 export async function isModelDownloaded(): Promise<boolean> {
-  const info = await FileSystem.getInfoAsync(getModelPath(), { size: true });
+  const info = await FileSystem.getInfoAsync(getModelPath());
   return info.exists && !info.isDirectory && (info.size ?? 0) >= MIN_EXPECTED_BYTES;
 }
 

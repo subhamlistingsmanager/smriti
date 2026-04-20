@@ -64,7 +64,7 @@ function MessageBubble({ message }: { message: Message }) {
         isUser ? styles.userBubble : styles.smritiBubble,
       ]}
     >
-      {!isUser && <Text style={styles.speakerName}>Shradha</Text>}
+      {!isUser && <Text style={styles.speakerName}>Hanuman Ji</Text>}
       <Text style={[styles.messageText, isUser && styles.userText]}>
         {message.text}
       </Text>
@@ -125,7 +125,7 @@ function ThinkingIndicator() {
 
   return (
     <Animated.View style={[styles.thinkingContainer, { opacity }]}>
-      <Text style={styles.thinkingText}>Shradha is reflecting...</Text>
+      <Text style={styles.thinkingText}>Hanuman Ji is reflecting...</Text>
     </Animated.View>
   );
 }
